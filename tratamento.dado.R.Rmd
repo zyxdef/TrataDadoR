@@ -1,0 +1,628 @@
+---
+title: "Tratamento e Manuseio de Dados com R"
+author: "Marcelo Ventura Freire (EACH/USP)"
+date: "11 de abril de 2016"
+output: 
+    ioslides_presentation: 
+        transition: faster
+---
+
+```{r setup, include=FALSE, eval=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## O que veremos nesse curso
+1. Princípios de Tratamento e Manuseio de Dados
+2. Instalando e Rodando o Básico do R
+3. Rudimentos da Linguagem R
+4. Usando Pacotes do R para o Manuseio dos Dados
+
+# Princípios de Tratamento e Manuseio de Dados  
+## Princípios
+
+Objetivo: organizar o conjunto de dados para que possa ser analisado estatisticamente
+
+1. Organizando do Conjunto de Dados
+2. Programe! Não faça manualmente.
+3. Boas Práticas
+4. Vetorização
+
+## Organizando um Conjunto de Dados
+1. Importação a partir de um arquivo criado por outros programas
+2. Crítica dos dados
+3. Formato do conjunto de dados
+4. Transformações de variáveis
+
+## Importação dos Dados
+
+Origens possíveis para os dados
+
+1. Excel
+2. Google Forms
+3. Coleta biométrica de dados
+(e.g., sensores, actímetro, *eye tracking* etc.)
+4. Dados armazenados em arquivos de outros programas estatísticos 
+(SPSS, Stata, Minitab, SAS etc.)
+5. Dados oriundos de sistemas de gerenciamento de bancos de dados (SGBD), 
+extraídos via, e.g., SQL
+6. Dados não estruturados coletados eletronicamente
+(e.g., *log* das buscas realizadas no Google em um intervalo de uma hora)
+
+## Crítica dos Dados
+Detecção e correção de potenciais erros de digitação, transcrição e manuseio, bem como orientação para realização das correções
+
+                                        "Shit happens" (Confúcio)
+                                        "... all the time" (Lao Tse)
+
+1. Padrões de erros
+1. Valores discrepantes (*outliers*)
+2. Uso inconsistente dos nomes de categorias
+2. Inconsistências
+3. Listagem de valores a serem verificados
+
+## Crítica dos Dados
+### Padrões de Erros
+Começou em uma linha e passou para a próxima sem perceber 
+```{r, echo = F}
+data.frame(
+  A = c("   1", "   2", "   1", "    ", "   4"),
+  B = c("  10", "  12", "  11", "    ", "  13"),
+  C = c("0.23", "0.57", "0.62", "    ", "0.72"),
+  D = c("   A", "   B", "    ", "   B", "   A"),
+  E = c("masc", " fem", "    ", " fem", " fem"),
+  F = c(" 125", " 200", "    ", " 400", " 300")
+)
+```
+
+## Crítica dos Dados
+### Padrões de Erros
+Pulou uma coluna, deixou em branco e continuou na seguinte
+```{r, echo = F}
+data.frame(
+  A = c("   1", "   2", "   1", "   4"),
+  B = c("  10", "  12", "    ", "  13"),
+  C = c("0.23", "0.57", "  11", "0.72"),
+  D = c("   A", "   B", "0.62", "   A"),
+  E = c("masc", " fem", "   B", " fem"),
+  F = c(" 125", " 200", " fem", " 300"),
+  G = c("    ", "    ", " 400", "    ")
+)
+```
+
+## Crítica dos Dados
+### Padrões de Erros
+Digitou sobre uma célula já preenchida ou pulou um valor
+```{r, echo = F}
+data.frame(
+  A = c("   1", "   2", "   1", "   4"),
+  B = c("  10", "  12", "0.62", "  13"),
+  C = c("0.23", "0.57", "   B", "0.72"),
+  D = c("   A", "   B", " fem", "   A"),
+  E = c("masc", " fem", " 400", " fem"),
+  F = c(" 125", " 200", "    ", " 300")
+)
+```
+
+## Crítica dos Dados
+### Valores Discrepantes
+Queria ter digitado `12.34`, mas digitou `124`
+```{r, fig.height=3, fig.width=5}
+tempo <- c(12.36, 12.42, 124, 11.99, 10.77, 11.05, 13.20)
+boxplot(tempo, horizontal = T)
+```
+   
+## Crítica dos Dados
+### Uso inconsistente dos nomes de categorias
+Mais de um rótulo para a mesma categoria
+```{r, echo = F}
+data.frame(
+  Sexo    = c("   M", "Masc", "   F", "   f"),
+  Estádio = c("   2", "  II", "Est1", "  1A"),
+  Hodgkin = c(" não", "   n", " nao", "   0"),
+  Benigno = c(" Ben", " sim", "   B", "   s")
+)
+```
+   
+   
+   
+   
+    
+## Crítica dos Dados
+### Inconsistências
+1. Tem 12 anos de idade e 40 anos de instrução
+2. A soma de horas das atividades realizadas em um dia superam 24h
+3. Etc.
+
+
+## Formato do Conjunto de Dados
+Adequação do formato do conjunto de dados ao uso pretendido  
+
+1. Formato largo *vs* formato longo
+2. Conversão de conjunto de dados de um formato para o outro
+
+## Formato do Conjunto de Dados
+### Formato Largo (*Wide*) 
+Algumas funções que implementam técnicas estatísticas 
+(principalmente as de medidas repetidas) 
+exigem os dados neste formato ...
+```{r, echo=FALSE}
+data.frame(
+  suj = c(1, 2, 3), 
+  dilat.t0 = c(2.1, 1.7, 2.1),
+  dilat.t1 = c(2.3, 1.9, 2.5)
+  )
+```
+
+## Formato do Conjunto de Dados
+### Formato Longo (*Long*)
+... Já outras exigem os dados neste formato 
+(inclusive funções para gerar gráficos e visualizações)
+```{r, echo=FALSE}
+data.frame(
+  suj = c(1, 1, 2, 2, 3, 3), 
+  tempo = c(0, 1, 0, 1, 0, 1), 
+  dilat = c(2.1, 2.3, 1.7, 1.9, 2.1, 2.5)
+  )
+```
+
+## Formato do Conjunto de Dados
+### Conversão de um formato para o outro
+conforme a necessidade
+```{r, echo=FALSE}
+data.frame(
+  suj = c(1, 2, 3), 
+  dilat.t0 = c(2.1, 1.7, 2.1),
+  dilat.t1 = c(2.3, 1.9, 2.5)
+  )
+data.frame(
+  suj = c(1, 1, 2, 2, 3, 3), 
+  tempo = c(0, 1, 0, 1, 0, 1), 
+  dilat = c(2.1, 2.3, 1.7, 1.9, 2.1, 2.5)
+  )
+```
+
+## Transformação de Variáveis
+1. Dado quantitativo → dado quantitativo
+2. Dado quantitativo → dado qualitativo
+3. Dado qualitativo → dado qualitativo
+4. Dado textual
+
+## Transformação de Variáveis
+### Dado Quantitativo → Dado Quantitativo
+#### Arredondamento
+```{r}
+tempos <- c(314.326, 42.597, 0.817, 7.914, 197.314, 12.480)
+round(tempos, 1)
+round(tempos)
+```
+
+## Transformação de Variáveis
+### Dado Quantitativo → Dado Quantitativo
+#### Reexpressão em outras escalas
+```{r, fig.height=3, fig.width=5}
+boxplot(tempos, horizontal = T)
+```
+
+## Transformação de Variáveis
+### Dado Quantitativo → Dado Quantitativo
+#### Reexpressão em outras escalas
+```{r, fig.height=3, fig.width=5}
+boxplot(log(tempos), horizontal = T)
+```
+
+## Transformação de Variáveis
+### Dado Quantitativo → Dado Qualitativo
+#### Categorização
+```{r}
+idades <- c(8, 12, 17, 21, 25, 40, 80)
+cortes <- c(0, 12, 17, 59, Inf)
+categs <- c("criança", "adolescente", "adulto", "idoso")
+data.frame(idade = idades, 
+    faixa.etária = cut(idades, breaks = cortes, labels = categs))
+```
+
+## Transformação de Variáveis
+### Dado Qualitativo → Dado Qualitativo
+#### Junções de categorias
+```{r}
+cortes2 <- c(0, 17, Inf)
+categs2 <- c("menor", "maior")
+data.frame(idade = idades, 
+    faixa.etária = cut(idades, breaks = cortes, labels = categs), 
+    status.legal = cut(idades, breaks = cortes2, labels = categs2))
+```
+
+## Transformação de Variáveis
+### Dado Qualitativo → Dado Qualitativo
+#### Renomeando categorias
+```{r}
+categs3 <- c("F1", "F2", "F3", "F4")
+data.frame(
+    idade = idades, 
+    faixa.etária = cut(idades, breaks = cortes, labels = categs),
+    faixa = cut(idades, breaks = cortes, labels = categs3))
+```
+
+## Transformação de Variáveis
+### Dado Textual
+1. Filtragem de texto
+2. Identificação de presença de padrão
+3. Transformação de texto
+
+## Transformação de Variáveis
+### Dado Textual
+#### Filtragem de texto
+```{r}
+nomes <- c("Marcos", "marcos", "Pedro", "pEDRO", "maRcoS", "MARCOS")
+data.frame(Nome = nomes, seq = seq(nomes))
+```
+
+## Transformação de Variáveis
+### Dado Textual
+#### Filtragem de texto
+```{r}
+filtro <- tolower(nomes) == "marcos"
+data.frame(Nome = nomes, seq = seq(nomes))[filtro, ]
+filtro
+```
+
+## Transformação de Variáveis
+### Dado Textual
+#### Identificação de presença de padrão
+```{r}
+comentário <- c("gostei", "não gosto", "agosto", "odiei Gião")
+data.frame(o.que.disse = comentário, 
+    referência.verbo.gostar = grepl("(^|[ ])gost[^ ]+", comentário))
+```
+
+## Transformação de Variáveis
+### Dado Textual
+#### Transformação de texto
+```{r}
+nome <- c("Márcia", "Mârcia", "Marcia", "Marcîa")
+data.frame(Nome = nome, nome = iconv(nome, to = "ASCII//TRANSLIT"))
+```
+
+## Programe! Não faça manualmente!
+
+- Processamento manual
+    - Erros assistemáticos
+        - Difíceis de detectar e de localizar
+- Processamento através de programação
+    - Erros sistemáticos
+        - Mais fáceis de detectar e de localizar
+
+## Programe! Não faça manualmente!
+1. Rastreabilidade
+    * “Esses dados estão certos?”
+2. Documentação
+    * “O quê é que são esses dados mesmo?”
+3. Reaproveitabilidade de esforço e de código 
+    * Lavoisier: "Nada se cria e nada se perde"
+
+## Boas Práticas
+1. Não jogue fora o original
+2. Porque é tão fácil bagunçar um conjunto de dados no Excel
+3. Variáveis primárias e variáveis derivadas
+4. Vetorização
+
+## Boas Práticas
+### Não jogue fora o original
+
+**É sério**: é muito comum mexer no arquivo original dos dados, 
+perceber que alguma ~~cagada~~ besteira foi feita 
+e não haver uma cópia do original.
+
+Por isso, antes de começar a mexer nos dados, 
+**crie uma cópia do arquivo de dados original e deixe a salvo fora da pasta de trabalho**.
+
+## Boas Práticas
+### Porque é tão fácil bagunçar um conjunto de dados no Excel
+
+![](planilhazoada.2.png)
+
+## Boas Práticas
+### Porque é tão fácil bagunçar um conjunto de dados no Excel
+Metainformação implícita ao invés de explícita
+
+1. Metainformação = informação sobre a informação
+1. Pistas visuais (uso de cores, fontes, negrito etc.) para indicar metainformação 
+2. Metainformação armazenada em forma textual explícita permite que ela seja tratada através de um programa
+
+## Boas Práticas
+###  Variáveis Primárias e Variáveis Derivadas
+1. Fórmulas do Excel
+2. O demônio do *clica-e-arrasta*
+3. O demônio do *copy-paste*
+
+## Boas Práticas
+### Vetorização
+
+Para evitar loops explícitos
+
+Loops explícitos são geralmente:
+
+1. mais lentos, 
+2. mais sujeitos a erros e 
+3. menos legíveis
+
+## Boas Práticas
+### Loops explícitos são menos legíveis
+Loop explícito 
+```{r, echo=TRUE, eval=FALSE}
+for (i in 1:10) {
+    y[i] <- x[i] + 1
+}
+```
+Versão vetorizada
+```{r, echo=TRUE, eval=FALSE}
+y <- x + 1
+```
+
+## Boas Práticas
+### Loops explícitos são mais sujeitos a erros
+Queria ter escrito
+```{r, echo=TRUE, eval=FALSE}
+for (i in 1:10) {
+    y[i] <- x[i] + 1
+}
+```
+mas acabou escrevendo
+```{r, echo=TRUE, eval=FALSE}
+for (i in 1:100) {
+    y[i] <- x[i] + 1
+}
+```
+
+## Boas Práticas
+### Loops explícitos são mais sujeitos a erros
+Queria ter escrito
+```{r, echo=TRUE, eval=FALSE}
+for (i in 1:10) {
+    y[i] <- x[i] + 1
+}
+```
+mas acabou escrevendo
+```{r, echo=TRUE, eval=FALSE}
+for (i in 1:10) {
+    y[i] <- x[j] + 1
+}
+```
+
+## Boas Práticas
+### Loops explícitos são mais sujeitos a erros
+Queria ter escrito
+```{r, echo=TRUE, eval=FALSE}
+for (i in 2:10) {
+    y[i] <- x[i-1]
+}
+```
+mas acabou escrevendo
+```{r, echo=TRUE, eval=FALSE}
+for (i in 1:10) {
+    y[i] <- x[i-1]
+}
+```
+
+## Boas Práticas
+### Loops explícitos são mais sujeitos a erros
+Queria ter escrito
+```{r, echo=TRUE, eval=FALSE}
+for (i in 2:10) {
+    y[i] <- x[i-1]
+}
+```
+mas acabou escrevendo
+```{r, echo=TRUE, eval=FALSE}
+for (i in 2:10) {
+    y[i] <- x[i-10]
+}
+```
+
+# Instalando e Rodando o Básico do R
+
+Vá para a apresentação  
+[Instalando e Rodando o Básico do R](instalando.rodando.R.html)
+
+# Rudimentos da Linguagem R
+
+Vá para a apresentação  
+[Rudimentos da Linguagem R](rudimentos.linguagem.R.html)
+
+
+# Usando Pacotes do R para o Manuseio dos Dados
+## Atividades de Manuseio de Dados
+1. `Piping`
+2. Lendo/importando/escrevendo/exportando
+3. Visualização dos dados e da sua estrutura
+4. Manuseio das variáveis do conjunto de dados
+5. Manuseio das observações do conjunto de dados
+6. Convertendo entre os formatos longo e largo
+7. Manuseio de arquivos
+8. *Manuseio das observações e das variáveis*
+9. *Agregação os dados de um conjunto de dados*
+10. *Junção de conjuntos de dados*
+
+
+
+
+
+
+# Índice Geral
+
+1. Princípios de tratamento e manuseio de dados
+    1. Objetivo: organizar o conjunto de dados para que possa ser analisado estatisticamente
+        1. importação a partir de um arquivo criado por outros programas
+        2. detecção e correção de potenciais erros de digitação, transcrição e manuseio
+            1. inconsistências
+            2. valores discrepantes (outliers)
+        3. adequação do formato do conjunto de dados e da formatação dos seus dados
+            1. formato longo (long) x formato largo (wide) para conjunto de dados
+            2. conversão de conjunto de dados
+        4. transformações de variáveis:
+            1. quantitativa → quantitativa
+                1. arredondamento
+                2. reexpressão em outras escalas
+            2. quantitativa → qualitativa
+                1. categorização
+            3. qualitativa → qualitativa
+                1. junções de categorias
+                2. renomeando categorias
+            4. textuais
+                1. filtragem de texto
+                2. identificação de presença de padrão
+                3. transformação de texto
+    2. Programe! Não faça manualmente!
+        1. rastreabilidade (“Essa bagaça está certa?”)
+        2. documentação (“Que bagaça é essa?”)
+        3. reaproveitabilidade (Lavoisier)
+    3. Organizando um conjunto de dados
+        1. sempre mantenha uma cópia do arquivo original a salvo fora da pasta de trabalho
+        2. porque é tão fácil um conjunto de dados no Excel estar bagunçado
+            1. exemplo de planilha de Excel zoada e principais erros
+            2. metainformação (informação sobre a informação) implícita ao invés de explícita 
+                1. uso de cores, fontes, negrito ou outras indicações visuais para codificar metainformação ao invés de apresentar textualmente essa metainformação, 
+                2. metainformação armazenada em forma textual permite que ela seja tratada programaticamente
+        3. variáveis primárias e variáveis derivadas
+            1. fórmulas do Excel
+            2. o demônio do clica-e-arrasta
+            3. o demônio do copy-paste
+    4. vetorização para evitar loops explícitos
+            1. loops explícitos são geralmente mais lentos, mais sujeitos a erros e menos legíveis
+2. Instalando e rodando o básico
+    1. Programa estatístico R
+    2. Ambiente de Desenvolvimento Integrado (IDE) R Studio
+    3. Abas e navegação no R Studio: acessando o help, visualizando gráficos, inspecionando variáveis, histórico de comandos, carregando pacotes
+    4. Instalação de pacotes do R através do R Studio: pacotes didáticos swirl, Rcmdr; pacote de importação e exportação de dados readxl; pacotes de manuseio de dados dplyr, tidyr, reshape, reshape2, lubridate, magrittr, pipeR, data.table, car
+    5. Rmarkdown *
+    6. Controle de versão com Git *
+3. Rudimentos da linguagem R
+    1. Tipos e estruturas de dados em R 
+        1. Tipos de dados: 
+            1. quantitativo (numeric), 
+            2. textual (character), 
+            3. lógico (logical), 
+            4. categórico (factor/ordered)
+            5. outros
+        2. estruturas de dados: 
+            1. vetorial (c, vector), 
+            2. lista/“dicionário” (list), 
+            3. matricial (array/matrix), 
+            4. conjunto de dados (data.frame)
+        3. atributos: 
+            1. names, 
+            2. levels, nlevels
+            3. dim, dimnames, 
+            4. rownames, colnames, 
+            5. ncols, nrows, 
+        4. “não-dados”
+            1. NA, NaN, Inf, NULL
+    2. Programação em R
+        1. operadores de atribuição: <– e =
+        2. operadores de extração (subscripting) 
+            1. [], [[]] e $
+            2. indexando nas linhas e colunas: 
+            3. vetores numéricos positivos ( 1:10 ) e negativos ( -2:-10 ), 
+            4. vetores lógicos 
+            5. vetores textuais
+            6. opção “drop = F”
+        3. instruções de repetições
+            1. for
+                1. 1:N, 
+                2. names, 
+                3. seq, seq_*
+            2. while, repeat
+            3. break, next
+        4. instruções de execução condicional
+            1. if e else
+            2. switch
+        5. funções e operações 
+            1. executando funções existentes
+            2. criando as suas próprias funções
+4. Usando pacotes do R para melhorar o trabalho de manuseio dos dados
+    1. Piping
+        1. magrittr (): %>%, %T>%, %<>%
+        2. pipeR (): %>>%
+    2. Lendo/importando/escrevendo/exportando dados para arquivo
+        1. base
+            1. save
+            2. load
+        2. utils
+            1. read.csv, read.csv2, read.delim, read.delim2 e read.table
+            2. tar, untar, zip e unzip
+        3. readxl
+            1. excel_sheets
+            2. read_excel
+        4. foreign
+            1. read.dta (Stata)
+            2. read.epiinfo
+            3. read.mpt (Minitab)
+            4. read.spss
+    3. Visualização dos dados e da sua estrutura
+        1. base
+            1. summary, table, 
+            2. unique
+        2. utils
+            1. str
+            2. fix
+            3. head e tail
+    4. Manuseio das variáveis do conjunto de dados
+        1. base
+            is.* (funções de verificação de tipos)
+            as.* (funções de conversão de tipos), 
+            cut
+            ifelse
+            gsub
+            iconv
+            paste e paste0
+        2. dplyr
+            select e rename
+            mutate e transmute
+        3. tidyr
+            separate
+            unite
+        4. car
+            recode
+        5. lubridate (processamento de strings de data e hora)
+    5. Manuseio das observações do conjunto de dados
+        1. base: 
+            1. grep*, 
+            2. regex*
+            3. is.na, is.nan, is.null, is.infinite
+            4. any, all
+        2. dplyr: 
+            1. filter
+            2. arrange
+    6. Convertendo o conjunto de dados entre formatos longo e largo
+        1. reshape2
+            1. melt
+            2. cast
+            3. acast e dcast
+            4. recast
+        2. tidyr
+            1. gather
+            2. spread
+    7. Manuseio de arquivos
+        1. base
+            1. get.wd, set.wd
+            2. dir, dir.create, dirnames
+            3. list.*
+            4. file.*
+    8. *Manuseio das observações e das variáveis de um conjunto de dados*
+        1. data.table
+    9. *Agregação dos dados de um conjunto de dados*
+        1. base
+            1. by
+            2. apply, *apply
+        2. dplyr
+            1. group_by
+            2. summarise
+    10. *Junção de conjuntos de dados*
+        1. base
+            1. cbind, rbind;  
+            2. merge
+        2. reshape
+            1. merge_all
+        3. dplyr
+            1,*_join 
+  

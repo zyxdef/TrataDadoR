@@ -1,0 +1,97 @@
+---
+title: "Instalando e Rodando o Básico do R"
+author: "Marcelo Ventura Freire (EACH/USP)"
+date: "11 de abril de 2016"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE, eval=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## O que veremos nesse curso
+1. Instalação do Programa Estatístico `R`
+2. Instalação do Ambiente de Desenvolvimento Integrado (IDE) `R Studio`
+3. Abas e navegação no R Studio
+4. Instalação de pacotes do R através do R Studio
+5. *R Markdown*
+6. *Controle de versão com Git*
+
+## Instalando e rodando o básico
+### Instalando o R
+* No Windows
+    * Acesse no browser   
+    <https://cran.r-project.org/bin/windows/base/>  
+    e baixe o instalador adequado
+* No Linux
+    * Execute no terminal o comando  
+       `sudo apt-get install r-recommended` 
+* No Mac OS X
+    * Acesse no browser    
+    <https://cran.r-project.org/bin/macosx/>   
+    e baixe o instalador adequado
+
+## Instalando e rodando o básico
+### Instalando o R Studio
+
+Acesse  <https://www.rstudio.com/> ou  
+<https://www.rstudio.com/products/rstudio/download/> e  
+escolha a instalação adequada para o seu sistema operacional 
+(Windows, Linux ou Mac OS X)
+
+## Instalando e rodando o básico
+### Abas e navegação no R Studio
+1. Editando um script
+1. Rodando um script
+1. Acessando o help
+2. Visualizando gráficos
+3. Inspecionando variáveis
+4. Histórico de comandos 
+5. Carregando pacotes
+
+***
+
+Falar sobre cada um desses itens!!!
+
+## Instalando e rodando o básico
+### Instalação de pacotes do R através do R Studio
+
+Para instalar pacotes no R a partir do R Studio, 
+
+1) entre na aba `Packages` na janela inferior esquerda,
+2) clique no botão `Install` do painel da aba `Packages`
+3) digite o(s) nome(s) do(s) pacote(s) na caixa de texto
+`Packages (separate multiple with space or comma)` 
+na janela de diálogo `Install Packages`
+4) habilite a opção `Install dependencies`
+5) clique no botão `Install`
+
+## Instalando e rodando o básico
+### Instalação de pacotes do R através do R Studio
+Instale os pacotes 
+
+1. didáticos `swirl` e `Rcmdr`
+2. de importação e exportação de dados `readxl`
+3. de manuseio de dados `dplyr`, `tidyr`, `reshape`, `reshape2`, `lubridate`, `magrittr` e `car`
+
+## Instalando e rodando o básico
+### *R Markdown*
+
+Entre no menu `File > New File > R Markdown...` e crie um arquivo de apresentação (em *Presentation*) ou um documento PDF ou HTML (em *Document*).
+
+Eu criei esta apresentação com o R Markdown no R Studio.
+
+## Instalando e rodando o básico
+### *Controle de versão com Git*
+
+O seu programa funcionava direito com certeza até anteontem.
+
+Ontem você fez algumas edições e o seu programa começou a se comportar estranho.
+
+Você continuou editando e hoje, com certeza, o programa está funcionando errado.
+
+Como reverter o seu programa de volta para a versão de anteontem, 
+que funcionava direitinho, se ela já foi sobrescrita duas vezes?
+
+Resposta: **Sistema de Controle de Versão!!!**
+

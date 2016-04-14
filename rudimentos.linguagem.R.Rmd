@@ -1,0 +1,135 @@
+---
+title: "Rudimentos da \\ Linguagem R"
+author: "Marcelo Ventura Freire (EACH/USP)"
+date: "11 de abril de 2016"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE, eval=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## O que veremos nesse curso
+
+1. Tipos e estruturas de dados em R 
+    1. Tipos de dados
+    2. Estruturas de dados
+    3. Atributos
+    4. “Não-dados”
+2. Programação em R
+    1. Operador de atribuição
+    2. Operadores de extração (*subscripting*) 
+    3. Instruções de repetições
+    4. Instruções de execução condicional
+    5. Funções e operações 
+
+# Tipos e Estruturas de Dados em R 
+## Tipos de Dados
+1. quantitativo (`numeric()`), 
+2. textual (`character()`), 
+3. lógico (`logical()`), 
+4. categórico (`factor()` e `ordered()`)
+5. outros
+
+## Estruturas de Dados
+1. vetorial (`c()`, `vector()`), 
+2. lista/“dicionário” (`list()`), 
+3. matricial (`matrix()` e `array()`),
+4. conjunto de dados (`data.frame()`)
+
+## Atributos
+1. `names()`, 
+2. `levels()` e `nlevels()`
+3. `dim()` e `dimnames()` 
+4. `rownames()` e `colnames()`
+5. `ncols()` e `nrows()`
+
+## Os “Não-Dados” do R
+1. Dado faltante (*missing*): `NA` -- *Not Available*
+2. Dado não numérico: `NaN` -- *Not a Number*
+3. Valor Infinito: `Inf`
+4. Ausência de valor: `NULL`
+
+## Os “Não-Dados” do R
+### Dado Faltante
+```{r}
+idades <- c(18, 28, NA, 32)
+idades
+```
+
+## Os “Não-Dados” do R
+### Dado Não Numérico
+```{r}
+log(-2)
+```
+
+## Os “Não-Dados” do R
+###  Valor Infinito
+```{r}
+log(0)
+```
+
+## Os “Não-Dados” do R
+###  Ausência de Valor
+```{r}
+c()
+```
+
+# Programação em R
+## Programação em R
+1. Operador de atribuição
+2. Operadores de extração (*subscripting*) 
+3. Instruções de repetição
+4. Instruções de execução condicional
+5. Operações matemáticas
+5. Operações de comparação
+5. Operações lógicas
+5. Funções
+
+## Operador de Atribuição
+
+O operador `<-`
+
+## Operadores de Extração
+1. Os operadores `[]`, `[[]]` e `$`
+2. Indexando nas linhas e colunas
+3. Indexando com vetores numéricos positivos e negativos 
+4. Indexando com vetores lógicos 
+5. Indexando com vetores textuais
+6. A opção `drop = F` do operador `[]`
+
+***
+
+AQUI!!!  Um slide para cada um desses
+
+## Instruções de Repetição (*Loop*)
+1. A instrução `for`
+    1. `1:N`, 
+    2. `names()`
+    3. `seq()`, `seq_len()` e `seq_along()`
+2. *As instruções `while`, `repeat`, `break` e `next`*
+
+## Instruções de Execução Condicional
+1. As instruções `if` e `else`
+2. *A função `switch()`*
+
+## Funções e Operações, Operações e Funções 
+1. Operações matemáticas
+2. Operações de comparação
+3. Operações lógicas
+4. Executando funções existentes
+5. Criando as suas próprias funções
+
+## Programação em R
+### Operações de Comparação
+
+## Programação em R
+### Operações Lógicas
+
+## Programação em R
+### Executando Funções Existentes
+
+## Programação em R
+### Criando as suas Próprias Funções
+
+
