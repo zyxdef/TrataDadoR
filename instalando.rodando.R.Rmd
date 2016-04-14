@@ -4,10 +4,6 @@ author: "Marcelo Ventura Freire (EACH/USP)"
 output: ioslides_presentation
 ---
 
-```{r setup, include=FALSE, eval=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-```
-
 ## O que veremos nesse curso
 1. Instalação do Programa Estatístico `R`
 2. Instalação do Ambiente de Desenvolvimento Integrado (IDE) `R Studio`
@@ -18,6 +14,7 @@ knitr::opts_chunk$set(echo = FALSE)
     - *Controle de versão com Git*
 
 # Instalando e Rodando o Básico
+
 ## Instalando o R
 * No Windows
     * Acesse no browser   
@@ -31,12 +28,26 @@ knitr::opts_chunk$set(echo = FALSE)
     <https://cran.r-project.org/bin/macosx/>   
     e baixe o instalador adequado
 
+## Instalando o R
+
+![](cran.site.png)
+
 ## Instalando o R Studio
 
-Acesse  <https://www.rstudio.com/> ou  
-<https://www.rstudio.com/products/rstudio/download/> e  
-escolha a instalação adequada para o seu sistema operacional 
+Acesse
+
+<https://www.rstudio.com/>
+
+ou
+
+<https://www.rstudio.com/products/rstudio/download/>
+
+e escolha a instalação adequada para o seu sistema operacional 
 (Windows, Linux ou Mac OS X)
+
+## Instalando o R Studio
+
+![](rstudio.site.png)
 
 # Rodando o R Studio
 ## R Studio

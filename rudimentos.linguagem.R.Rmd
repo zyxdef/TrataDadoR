@@ -1,7 +1,6 @@
 ---
-title: "Rudimentos da \\ Linguagem R"
+title: "Rudimentos da \\  Linguagem R"
 author: "Marcelo Ventura Freire (EACH/USP)"
-date: "11 de abril de 2016"
 output: ioslides_presentation
 ---
 
@@ -23,7 +22,8 @@ knitr::opts_chunk$set(echo = FALSE)
     4. Instruções de execução condicional
     5. Funções e operações 
 
-# Tipos e Estruturas de Dados em R 
+# Tipos e Estruturas de \
+Dados em R 
 ## Tipos de Dados
 1. quantitativo (`numeric()`), 
 2. textual (`character()`), 
