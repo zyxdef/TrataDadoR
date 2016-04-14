@@ -1,7 +1,6 @@
 ---
 title: "Instalando e Rodando o Básico do R"
 author: "Marcelo Ventura Freire (EACH/USP)"
-date: "11 de abril de 2016"
 output: ioslides_presentation
 ---
 
