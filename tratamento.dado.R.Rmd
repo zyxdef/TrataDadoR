@@ -119,11 +119,7 @@ data.frame(
   Benigno = c(" Ben", " sim", "   B", "   s")
 )
 ```
-   
-   
-   
-   
-    
+
 ## Crítica dos Dados
 ### Inconsistências
 1. Tem 12 anos de idade e 40 anos de instrução
