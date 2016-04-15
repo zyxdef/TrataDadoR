@@ -1,5 +1,5 @@
 ---
-title: "Tratamento e Manuseio de\\ Dados com R"
+title: "Tratamento e Manuseio de Dados com R"
 author: "Marcelo Ventura Freire (EACH/USP)"
 output: ioslides_presentation
 ---
@@ -19,11 +19,12 @@ knitr::opts_chunk$set(echo = FALSE)
 
 Objetivo: organizar o conjunto de dados para que possa ser analisado estatisticamente
 
-1. Organizando do Conjunto de Dados
-2. Programe! Não faça manualmente.
+1. Organizando um Conjunto de Dados
+2. Programe! Não Faça Manualmente
 3. Boas Práticas
-4. Vetorização
+4. Integração de Dois ou Mais Conjuntos de Dados
 
+# Organizando um Conjunto de Dados
 ## Organizando um Conjunto de Dados
 1. Importação a partir de um arquivo criado por outros programas
 2. Crítica dos dados
@@ -34,15 +35,15 @@ Objetivo: organizar o conjunto de dados para que possa ser analisado estatistica
 
 Origens possíveis para os dados
 
-1. Excel
-2. Google Forms
-3. Coleta biométrica de dados
+- Excel
+- Google Forms
+- Coleta biométrica de dados
 (e.g., sensores, actímetro, *eye tracking* etc.)
-4. Dados armazenados em arquivos de outros programas estatísticos 
+- Dados armazenados em arquivos de outros programas estatísticos 
 (SPSS, Stata, Minitab, SAS etc.)
-5. Dados oriundos de sistemas de gerenciamento de bancos de dados (SGBD), 
+- Dados oriundos de sistemas de gerenciamento de bancos de dados (SGBD), 
 extraídos via, e.g., SQL
-6. Dados não estruturados coletados eletronicamente
+- Dados não estruturados coletados eletronicamente
 (e.g., *log* das buscas realizadas no Google em um intervalo de uma hora)
 
 ## Crítica dos Dados
@@ -52,10 +53,11 @@ Detecção e correção de potenciais erros de digitação, transcrição e manu
                                         "... all the time" (Lao Tse)
 
 1. Padrões de erros
-1. Valores discrepantes (*outliers*)
-2. Uso inconsistente dos nomes de categorias
-2. Inconsistências
-3. Listagem de valores a serem verificados
+2. Valores não razoáveis
+3. Valores discrepantes (*outliers*)
+4. Uso inconsistente dos nomes de categorias
+5. Inconsistências
+6. Listagem de valores a serem verificados
 
 ## Crítica dos Dados
 ### Padrões de Erros
@@ -101,6 +103,18 @@ data.frame(
 ```
 
 ## Crítica dos Dados
+### Valores Não Razoáveis
+
+Muitas variáveis quantitativas têm intervalos de valores possíveis claramente definidos.  
+
+Valores fora desses intervalos são suspeitos e devem ser confirmados individualmente.
+
+Exemplo: idade superior a 100 anos
+
+- não é um erro
+- mas é raro
+
+## Crítica dos Dados
 ### Valores Discrepantes
 Queria ter digitado `12.34`, mas digitou `124`
 ```{r, fig.height=3, fig.width=5}
@@ -125,6 +139,15 @@ data.frame(
 1. Tem 12 anos de idade e 40 anos de instrução
 2. A soma de horas das atividades realizadas em um dia superam 24h
 3. Etc.
+
+
+## Crítica dos Dados
+### Listagem de Valores a Serem Verificados
+
+Muitas vezes, pode ser interessante gerar uma listagem de observações 
+a serem confirmadas por quem tiver gerado/provido os dados.
+
+AQUI!!!
 
 
 ## Formato do Conjunto de Dados
@@ -175,10 +198,10 @@ data.frame(
 ```
 
 ## Transformação de Variáveis
-1. Dado quantitativo → dado quantitativo
-2. Dado quantitativo → dado qualitativo
-3. Dado qualitativo → dado qualitativo
-4. Dado textual
+1. Dado Quantitativo → Dado Quantitativo
+2. Dado Quantitativo → Dado Qualitativo
+3. Dado Qualitativo → Dado Qualitativo
+4. Dado Textual → Dado Qualitativo
 
 ## Transformação de Variáveis
 ### Dado Quantitativo → Dado Quantitativo
@@ -237,7 +260,7 @@ data.frame(
 ```
 
 ## Transformação de Variáveis
-### Dado Textual
+### Dado Textual → Dado Qualitativo
 1. Filtragem de texto
 2. Identificação de presença de padrão
 3. Transformação de texto
@@ -265,7 +288,7 @@ filtro
 ```{r}
 comentário <- c("gostei", "não gosto", "agosto", "odiei Gião")
 data.frame(o.que.disse = comentário, 
-    referência.verbo.gostar = grepl("(^|[ ])gost[^ ]+", comentário))
+    referência.ao.verbo.gostar = grepl("(^|[ ])gost[^ ]+", comentário))
 ```
 
 ## Transformação de Variáveis
@@ -276,6 +299,7 @@ nome <- c("Márcia", "Mârcia", "Marcia", "Marcîa")
 data.frame(Nome = nome, nome = iconv(nome, to = "ASCII//TRANSLIT"))
 ```
 
+# Programe! Não faça manualmente!
 ## Programe! Não faça manualmente!
 
 - Processamento manual
@@ -293,11 +317,12 @@ data.frame(Nome = nome, nome = iconv(nome, to = "ASCII//TRANSLIT"))
 3. Reaproveitabilidade de esforço e de código 
     * Lavoisier: "Nada se cria e nada se perde"
 
+# Boas Práticas
 ## Boas Práticas
 1. Não jogue fora o original
 2. Porque é tão fácil bagunçar um conjunto de dados no Excel
-3. Variáveis primárias e variáveis derivadas
-4. Vetorização
+3. Variáveis primárias *vs* variáveis derivadas
+4. **Vetorização**
 
 ## Boas Práticas
 ### Não jogue fora o original
@@ -412,6 +437,35 @@ for (i in 2:10) {
 }
 ```
 
+# Integrando Conjuntos de Dados
+## Integrando Conjuntos de Dados
+
+A integração de dois ou mais conjuntos de dados envolve um grau de complexidade maior 
+do que a organização de um conjunto de dados individual.
+
+## Integrando Conjuntos de Dados
+
+O grau de complexidade pode variar
+
+- simplesmente juntar em um conjunto de dados unificado 
+as observações (linhas) de conjuntos de dados 
+que tenham exatamente as mesmas variáveis (colunas)
+    - caso mais simples
+- realizar agregações em níveis diferentes em cada conjunto de dados até que todos os conjunto de dados tenham observações (linhas) associáveis entre si
+    - caso bem menos simples
+
+## Integração de Conjuntos de Dados
+
+**Sugestão** 
+
+Se você tem pouca experiência:
+
+* Passe essa atividade para alguém que já saiba fazer isso
+
+**OU**
+
+* Reserve um bocado de tempo para aprender a fazer isso direito.
+
 # Instalando e Rodando o Básico do R
 
 Vá para a apresentação  
@@ -439,7 +493,7 @@ Vá para a apresentação
 
 
 
-
+<!--
 
 # Índice Geral
 
@@ -619,3 +673,4 @@ Vá para a apresentação
         3. dplyr
             1,*_join 
   
+-->
