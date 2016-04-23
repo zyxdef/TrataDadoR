@@ -19,10 +19,21 @@ knitr::opts_chunk$set(echo = FALSE)
 
 Objetivo: organizar o conjunto de dados para que possa ser analisado estatisticamente
 
+1. Conjuntos de Dados
 1. Organizando um Conjunto de Dados
 2. Programe! Não Faça Manualmente
 3. Boas Práticas
 4. Integração de Dois ou Mais Conjuntos de Dados
+
+# Conjuntos de Dados
+## Conjuntos de Dados
+
+- observação
+
+- variável
+
+**AQUI!!!**
+
 
 # Organizando um Conjunto de Dados
 ## Organizando um Conjunto de Dados
@@ -144,11 +155,20 @@ data.frame(
 ## Crítica dos Dados
 ### Listagem de Valores a Serem Verificados
 
-Muitas vezes, pode ser interessante gerar uma listagem de observações 
-a serem confirmadas por quem tiver gerado/provido os dados.
+Algumas vezes, esses erros podem ser corrigidos na fase de importação e crítica,
+mas, na maioria da vezes, não.
 
-AQUI!!!
+Por isso, é útil gerar uma listagem individualizando quais observações precisam 
+de confirmação (e em quais variáveis) e redigitação caso seja constatado erro. 
 
+## Crítica dos Dados
+### Listagem de Valores a Serem Verificados
+
+Em algumas vezes, pode ser útil que essa listagem seja gerada duas vezes: 
+
+- uma listagem ordenada por observação (útil para quem quem for verificar)
+
+- uma listagem ordenada por variável (útil para quem quem estiver programando)
 
 ## Formato do Conjunto de Dados
 Adequação do formato do conjunto de dados ao uso pretendido  
@@ -266,6 +286,19 @@ data.frame(
 3. Transformação de texto
 
 ## Transformação de Variáveis
+### Dado Textual → Dado Qualitativo
+
+Na verdade, uma área inteira de análise de dados é baseada nessa ideia: 
+a análise estatística de um *corpus* textual.
+
+O que veremos aqui não tem a pretensão de ser uma introdução aos conjuntos 
+de técnicas dessa área, mas simplesmente ser uma apresentação ao problema em si.
+
+Se a complexidade do problema estiver muito grande, procure se aconselhar com 
+alguém que já tenha lidado com isso antes.
+
+
+## Transformação de Variáveis
 ### Dado Textual
 #### Filtragem de texto
 ```{r}
@@ -310,12 +343,15 @@ data.frame(Nome = nome, nome = iconv(nome, to = "ASCII//TRANSLIT"))
         - Mais fáceis de detectar e de localizar
 
 ## Programe! Não faça manualmente!
+
+*Por quê programar se posso fazer na unha?*
+
 1. Rastreabilidade
-    * “Esses dados estão certos?”
+    - “Esses dados estão certos?” (Você mesmo, após seis meses sem mexer nos dados)
 2. Documentação
-    * “O quê é que são esses dados mesmo?”
+    - “O quê é que são esses dados mesmo?”  (*Idem*, *ibidem*)
 3. Reaproveitabilidade de esforço e de código 
-    * Lavoisier: "Nada se cria e nada se perde"
+    - Lavoisier: "Nada se cria e nada se perde"
 
 # Boas Práticas
 ## Boas Práticas
@@ -331,13 +367,33 @@ data.frame(Nome = nome, nome = iconv(nome, to = "ASCII//TRANSLIT"))
 perceber que alguma ~~cagada~~ besteira foi feita 
 e não haver uma cópia do original.
 
-Por isso, antes de começar a mexer nos dados, 
-**crie uma cópia do arquivo de dados original e deixe a salvo fora da pasta de trabalho**.
+Por isso, antes de começar a mexer nos dados, **crie uma cópia do arquivo de dados original e deixe-a fora da pasta de trabalho,** a salvo dos seus dedinhos.
+
+## Boas Práticas
+### Não jogue fora o original
+
+**É sério**: é muito comum mexer no arquivo original dos dados, 
+perceber que alguma ~~cagada~~ besteira foi feita 
+e não haver uma cópia do original.
+
+Por isso, antes de começar a mexer nos dados, **crie uma cópia do arquivo de dados original e deixe-a fora da pasta de trabalho,** a salvo dos seus dedinhos.
+
+Depois não diga que eu não avisei.
 
 ## Boas Práticas
 ### Porque é tão fácil bagunçar um conjunto de dados no Excel
 
 ![](planilhazoada.2.png)
+
+## Boas Práticas
+### Porque é tão fácil bagunçar um conjunto de dados no Excel
+
+Uma planilha eletrônica é para armazenar dados não estruturados.  
+
+Ela pode ser usada para armanzenar dados estruturados, 
+mas ela não te obriga a estruturar os dados para poder armazená-los.
+
+
 
 ## Boas Práticas
 ### Porque é tão fácil bagunçar um conjunto de dados no Excel
@@ -454,7 +510,7 @@ que tenham exatamente as mesmas variáveis (colunas)
 - realizar agregações em níveis diferentes em cada conjunto de dados até que todos os conjunto de dados tenham observações (linhas) associáveis entre si
     - caso bem menos simples
 
-## Integração de Conjuntos de Dados
+## Integrando Conjuntos de Dados
 
 **Sugestão** 
 
