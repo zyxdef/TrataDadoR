@@ -28,9 +28,68 @@ Objetivo: organizar o conjunto de dados para que possa ser analisado estatistica
 # Conjuntos de Dados
 ## Conjuntos de Dados
 
-- observação
+Conceitos 
 
+- observação
 - variável
+- metainformação
+- conjunto de dados estruturado
+- conjunto de dados não estruturado
+
+
+## Conjuntos de Dados
+
+Observação
+
+- cada unidade provedora de informação individual
+- pode ser 
+    - uma pessoa, 
+    - uma tentativa, 
+    - cada uma das duas realizações de teste (pré e pós tratamento)
+
+**AQUI!!!**
+
+## Conjuntos de Dados
+
+Variável
+
+- atributos ou características de interesse nas observações
+    - o que é *característica* do individuo é *variável* na população
+
+**AQUI!!!**
+
+## Conjuntos de Dados
+
+Metainformação
+
+- "Informação sobre a informação"
+- Na verdade, informação sobre as variáveis
+    - tipo
+    - níveis possíveis
+    - relação com outras variáveis 
+        - variáveis primárias *vs* variáveis derivadas (veremos mais adiante)
+
+**AQUI!!!**
+
+## Conjuntos de Dados
+
+Conjunto de dados estruturado
+    
+- cada linha contém os dados de uma observação
+- todas as linhas contêm os valores das mesmas variáveis e na mesma sequência
+- o conjtunto de dados contém as metainformações referentes aos dados
+
+**AQUI!!!**
+
+## Conjuntos de Dados
+
+Conjunto de dados não estruturado
+
+**AQUI!!!**
+
+- cada linha contém os dados de uma observação
+- todas as linhas contêm os valores das mesmas variáveis e na mesma sequência
+- o conjtunto de dados contém as metainformações referentes aos dados
 
 **AQUI!!!**
 
