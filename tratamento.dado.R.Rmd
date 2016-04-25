@@ -750,12 +750,12 @@ Se você tem pouca experiência:
 # Instalando e Rodando o Básico do R
 
 Vá para a apresentação  
-[Instalando e Rodando o Básico do R](instalando.rodando.R.html)
+[Instalando e Rodando o Básico do R](../InstalaR/instalando.rodando.R.html)
 
 # Rudimentos da Linguagem R
 
 Vá para a apresentação  
-[Rudimentos da Linguagem R](rudimentos.linguagem.R.html)
+[Rudimentos da Linguagem R](../IntroLingR/rudimentos.linguagem.R.html)
 
 
 # Usando Pacotes do R para o Manuseio dos Dados
