@@ -1,0 +1,217 @@
+---
+title: "Usando Pacotes do R para o Manuseio de Dados"
+author: "Marcelo Ventura Freire (EACH/USP)"
+output: 
+  ioslides_presentation: 
+    fig_caption: yes
+    incremental: no
+    transition: faster
+---
+
+```{r setup, include=FALSE, eval=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# Usando Pacotes do R para o Manuseio de Dados
+## Pacotes do R para Manuseio de Dados
+
+- Atividades de Manuseio de Dados
+- Pacotes do R para o Manuseio de Dados
+
+# Atividades de Manuseio de Dados
+## Atividades de Manuseio de Dados
+1. `Piping`
+2. Lendo/importando/escrevendo/exportando
+3. Visualização dos dados e da sua estrutura
+4. Manuseio das variáveis do conjunto de dados
+5. Manuseio das observações do conjunto de dados
+6. Convertendo entre os formatos longo e largo
+7. Manuseio de arquivos
+8. *Manuseio das observações e das variáveis*
+9. *Agregação os dados de um conjunto de dados*
+10. *Junção de conjuntos de dados*
+
+
+
+
+<!--
+
+# Índice Geral
+
+1. Princípios de tratamento e manuseio de dados
+    1. Objetivo: organizar o conjunto de dados para que possa ser analisado estatisticamente
+        1. importação a partir de um arquivo criado por outros programas
+        2. detecção e correção de potenciais erros de digitação, transcrição e manuseio
+            1. inconsistências
+            2. valores discrepantes (outliers)
+        3. adequação do formato do conjunto de dados e da formatação dos seus dados
+            1. formato longo (long) x formato largo (wide) para conjunto de dados
+            2. conversão de conjunto de dados
+        4. transformações de variáveis:
+            1. quantitativa → quantitativa
+                1. arredondamento
+                2. reexpressão em outras escalas
+            2. quantitativa → qualitativa
+                1. categorização
+            3. qualitativa → qualitativa
+                1. junções de categorias
+                2. renomeando categorias
+            4. textuais
+                1. filtragem de texto
+                2. identificação de presença de padrão
+                3. transformação de texto
+    2. Programe! Não faça manualmente!
+        1. rastreabilidade (“Essa bagaça está certa?”)
+        2. documentação (“Que bagaça é essa?”)
+        3. reaproveitabilidade (Lavoisier)
+    3. Organizando um conjunto de dados
+        1. sempre mantenha uma cópia do arquivo original a salvo fora da pasta de trabalho
+        2. porque é tão fácil um conjunto de dados no Excel estar bagunçado
+            1. exemplo de planilha de Excel zoada e principais erros
+            2. metainformação (informação sobre a informação) implícita ao invés de explícita 
+                1. uso de cores, fontes, negrito ou outras indicações visuais para codificar metainformação ao invés de apresentar textualmente essa metainformação, 
+                2. metainformação armazenada em forma textual permite que ela seja tratada programaticamente
+        3. variáveis primárias e variáveis derivadas
+            1. fórmulas do Excel
+            2. o demônio do clica-e-arrasta
+            3. o demônio do copy-paste
+    4. vetorização para evitar loops explícitos
+            1. loops explícitos são geralmente mais lentos, mais sujeitos a erros e menos legíveis
+2. Instalando e rodando o básico
+    1. Programa estatístico R
+    2. Ambiente de Desenvolvimento Integrado (IDE) R Studio
+    3. Abas e navegação no R Studio: acessando o help, visualizando gráficos, inspecionando variáveis, histórico de comandos, carregando pacotes
+    4. Instalação de pacotes do R através do R Studio: pacotes didáticos swirl, Rcmdr; pacote de importação e exportação de dados readxl; pacotes de manuseio de dados dplyr, tidyr, reshape, reshape2, lubridate, magrittr, pipeR, data.table, car
+    5. Rmarkdown *
+    6. Controle de versão com Git *
+3. Rudimentos da linguagem R
+    1. Tipos e estruturas de dados em R 
+        1. Tipos de dados: 
+            1. quantitativo (numeric), 
+            2. textual (character), 
+            3. lógico (logical), 
+            4. categórico (factor/ordered)
+            5. outros
+        2. estruturas de dados: 
+            1. vetorial (c, vector), 
+            2. lista/“dicionário” (list), 
+            3. matricial (array/matrix), 
+            4. conjunto de dados (data.frame)
+        3. atributos: 
+            1. names, 
+            2. levels, nlevels
+            3. dim, dimnames, 
+            4. rownames, colnames, 
+            5. ncols, nrows, 
+        4. “não-dados”
+            1. NA, NaN, Inf, NULL
+    2. Programação em R
+        1. operadores de atribuição: <– e =
+        2. operadores de extração (subscripting) 
+            1. [], [[]] e $
+            2. indexando nas linhas e colunas: 
+            3. vetores numéricos positivos ( 1:10 ) e negativos ( -2:-10 ), 
+            4. vetores lógicos 
+            5. vetores textuais
+            6. opção “drop = F”
+        3. instruções de repetições
+            1. for
+                1. 1:N, 
+                2. names, 
+                3. seq, seq_*
+            2. while, repeat
+            3. break, next
+        4. instruções de execução condicional
+            1. if e else
+            2. switch
+        5. funções e operações 
+            1. executando funções existentes
+            2. criando as suas próprias funções
+4. Usando pacotes do R para melhorar o trabalho de manuseio dos dados
+    1. Piping
+        1. magrittr (): %>%, %T>%, %<>%
+        2. pipeR (): %>>%
+    2. Lendo/importando/escrevendo/exportando dados para arquivo
+        1. base
+            1. save
+            2. load
+        2. utils
+            1. read.csv, read.csv2, read.delim, read.delim2 e read.table
+            2. tar, untar, zip e unzip
+        3. readxl
+            1. excel_sheets
+            2. read_excel
+        4. foreign
+            1. read.dta (Stata)
+            2. read.epiinfo
+            3. read.mpt (Minitab)
+            4. read.spss
+    3. Visualização dos dados e da sua estrutura
+        1. base
+            1. summary, table, 
+            2. unique
+        2. utils
+            1. str
+            2. fix
+            3. head e tail
+    4. Manuseio das variáveis do conjunto de dados
+        1. base
+            is.* (funções de verificação de tipos)
+            as.* (funções de conversão de tipos), 
+            cut
+            ifelse
+            gsub
+            iconv
+            paste e paste0
+        2. dplyr
+            select e rename
+            mutate e transmute
+        3. tidyr
+            separate
+            unite
+        4. car
+            recode
+        5. lubridate (processamento de strings de data e hora)
+    5. Manuseio das observações do conjunto de dados
+        1. base: 
+            1. grep*, 
+            2. regex*
+            3. is.na, is.nan, is.null, is.infinite
+            4. any, all
+        2. dplyr: 
+            1. filter
+            2. arrange
+    6. Convertendo o conjunto de dados entre formatos longo e largo
+        1. reshape2
+            1. melt
+            2. cast
+            3. acast e dcast
+            4. recast
+        2. tidyr
+            1. gather
+            2. spread
+    7. Manuseio de arquivos
+        1. base
+            1. get.wd, set.wd
+            2. dir, dir.create, dirnames
+            3. list.*
+            4. file.*
+    8. *Manuseio das observações e das variáveis de um conjunto de dados*
+        1. data.table
+    9. *Agregação dos dados de um conjunto de dados*
+        1. base
+            1. by
+            2. apply, *apply
+        2. dplyr
+            1. group_by
+            2. summarise
+    10. *Junção de conjuntos de dados*
+        1. base
+            1. cbind, rbind;  
+            2. merge
+        2. reshape
+            1. merge_all
+        3. dplyr
+            1,*_join 
+  
+-->

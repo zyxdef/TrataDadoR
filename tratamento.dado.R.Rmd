@@ -5,7 +5,7 @@ output:
   ioslides_presentation: 
     fig_caption: yes
     incremental: yes
-    transition: slower
+    transition: faster
 ---
 
 ```{r setup, include=FALSE, eval=FALSE}
@@ -20,8 +20,9 @@ knitr::opts_chunk$set(echo = FALSE)
 
 # Princípios de Tratamento e Manuseio de Dados  
 ## Princípios
+### Objetivo
 
-Objetivo: organizar o conjunto de dados para que possa ser analisado estatisticamente
+Organizar o conjunto de dados para que possa ser analisado estatisticamente
 
 1. Conjuntos de Dados
 1. Organizando um Conjunto de Dados
@@ -31,72 +32,174 @@ Objetivo: organizar o conjunto de dados para que possa ser analisado estatistica
 
 # Conjuntos de Dados
 ## Conjuntos de Dados
+### Conceitos 
 
-Conceitos 
-
-- observação
-- variável
-- metainformação
-- conjunto de dados estruturado
-- conjunto de dados não estruturado
-
+- Observação
+- Variável
+- Metainformação
+- Conjunto de dados estruturado
+- Conjunto de dados não estruturado
 
 ## Conjuntos de Dados
+### Observação
 
-Observação
-
-- cada unidade provedora de informação individual
-- pode ser 
-    - uma pessoa, 
-    - uma tentativa, 
-    - cada uma das duas realizações de teste (pré e pós tratamento)
-
-**AQUI!!!**
+- Unidade provedora de informação individual
+- Pode ser 
+    - uma pessoa
+    - uma tentativa de execução de uma tarefa
+    - uma realização de um teste
 
 ## Conjuntos de Dados
+### Observação
 
-Variável
+A escolha adequada depende do contexto do _**seu**_ problema.
 
-- atributos ou características de interesse nas observações
+Um exemplo:
+
+20 participantes são divididos em um grupo de controle e um grupo de tratamento, cada um com 10 participantes.  
+
+Serão administrados um comprimido com uma dosagem de cafeina aos participantes do grupo de tratamento e um comprimido inerte aos participantes do grupo controle.
+
+## Conjuntos de Dados
+### Observação
+
+Se registrarmos uma medida de atenção apenas após a administração do comprimido
+
+- uma observação será a resposta de cada participante
+    - simples assim
+
+## Conjuntos de Dados
+### Observação
+
+Se registrarmos uma medida de atenção *antes* e uma *depois* a administração do comprimido
+
+- uma observação poderá será a resposta de cada participante
+    - em cada observação: uma medição *pré-intervenção* 
+    e uma medição *pós-intervenção* 
+    - cada participante gerará uma única observação
+- uma observação poderá será a resposta de cada participante em cada condição
+    - em cada observação: uma condição de medição (*pré* ou *pós*) 
+    e a medição sob essa condição
+    - cada participante gerará duas observações
+
+## Conjuntos de Dados
+### Observação
+
+Qual é a melhor escolha?
+
+- Depende do que você vai precisar fazer com os dados
+    - em algumas situações, a primeira forma será mais adequada
+    - em outras situações, a segunda forma será mais adequada
+    - em outras situações ainda, ora será uma, ora será outra
+        - conversão entre formatos
+            - mais adiante
+
+## Conjuntos de Dados
+### Variável
+
+- Atributos ou características de interesse nas observações
     - o que é *característica* do individuo é *variável* na população
-
-**AQUI!!!**
+- Podem ser *primárias* ou *derivadas* 
+    - Primárias: peso, estatura
+        - Derivada: IMC
+    - Primárias: latitude e longitude
+        - Derivada: fuso horário oficial
 
 ## Conjuntos de Dados
+### Variável
 
-Metainformação
+- Podem ser *quantitativas* ou *qualitativas*
+    - Quantitativas: valores numéricos
+        - contínuas: resultados de medições
+        - discretas: resultados de contagens
+    - Qualitativas (ou *Categóricas*): *níveis* ou *categorias*
+        - ordinais: com uma ordem entre as categorias
+        - nominais: sem uma ordem ou com ordem ignorável
+    - É possível a conversão entre esses tipos:
+        - Contínua > Discreta > Ordinal > Nominal
 
-- "Informação sobre a informação"
+## Conjuntos de Dados
+### Variável
+
+Exemplos
+
+- estatura, peso e IMC
+- pressões sistólica e diastólica
+- estado civil
+- condição em relação a um alelo específico: 
+    - homozigoto *vs* heterozigoto
+    - dominante *vs* recessivo
+    - homozig. dominante *vs* heterozig. *vs* homozig. recessivo
+
+## Conjuntos de Dados
+### Metainformação
+
+"Informação sobre a informação"
+
 - Na verdade, informação sobre as variáveis
-    - tipo
-    - níveis possíveis
-    - relação com outras variáveis 
-        - variáveis primárias *vs* variáveis derivadas (veremos mais adiante)
-
-**AQUI!!!**
+    - nome longo da variável
+    - tipo: contínua, discreta, ordinal, nominal
+    - para variáveis qualitativa: 
+        - quantos e quais são as categorias possíveis
+        - nome longo para as categorias
+            - para as ordinais: ordem entre as categorias
+    - para variáveis derivadas: relação com as outras variáveis 
+        - $IMC = \frac{peso}{estatura^2}$
 
 ## Conjuntos de Dados
-
-Conjunto de dados estruturado
+### Conjunto de Dados Estruturado
     
-- cada linha contém os dados de uma observação
-- todas as linhas contêm os valores das mesmas variáveis e na mesma sequência
-- o conjtunto de dados contém as metainformações referentes aos dados
-
-**AQUI!!!**
+- *Linha = Observação*
+- Todas as linhas contêm os valores das mesmas variáveis e na mesma sequência
+- O conjunto de dados contém metainformações
 
 ## Conjuntos de Dados
+### Conjunto de Dados Estruturado
 
-Conjunto de dados não estruturado
+*Linha = Observação*
 
-**AQUI!!!**
+- cada linha contém os dados de uma única observação
+- os dados de uma mesma observação estão todos em uma única linha
 
-- cada linha contém os dados de uma observação
-- todas as linhas contêm os valores das mesmas variáveis e na mesma sequência
-- o conjtunto de dados contém as metainformações referentes aos dados
+## Conjuntos de Dados
+### Conjunto de dados estruturado
+    
+Todas as linhas contêm os valores das mesmas variáveis e na mesma sequência
 
-**AQUI!!!**
+    Nome: João; Sobre: Silva; Idade: 23; Estat: 1,67 m; EstCiv: Solteiro
+    Nome: Maria; Sobre: Alves; Idade: 32; Estat: 1,63 m; EstCiv: Casado
 
+é o mesmo que 
+
+    Nome   Sobre  Idade  Estat  EstCiv
+    João   Silva  23     1,67   Solteiro
+    Maria  Alves  32     1,63   Casado
+
+## Conjuntos de Dados
+### Conjunto de Dados Estruturado
+
+O conjunto de dados contém as metainformações referentes aos dados
+
+    Sobre: "Sobrenome"
+    NomeInt = Nome + Sobre
+    EstCiv: "Estado Civil"
+    EstCiv: {Solteiro, Casado, UniaoEstavel, Divorciado, Desquitado, Viuvo}
+    Idade: "Idade em anos Completos"
+    Idade: "%3d"
+    Idade: [0, 150]
+    Estatura: "Estatura em metros com até a segunda casa decimal"
+    Estatura: "%4.2f"
+    Estatura: (0, 3)
+
+## Conjuntos de Dados
+### Conjunto de Dados Não Estruturado
+
+- Cada linha pode conter os dados de mais do que uma observação
+- Os dados de uma mesma observação pode aparecer em mais de uma linha
+- Nem todas as variáveis estão presentes em todas as observações
+- As observações podem ter mais de um valor para a mesma variável
+- As variáveis podem aparecer em qualquer ordem
+- O conjunto de dados pode não conter metainformações
 
 # Organizando um Conjunto de Dados
 ## Organizando um Conjunto de Dados
@@ -210,9 +313,13 @@ data.frame(
 
 ## Crítica dos Dados
 ### Inconsistências
-1. Tem 12 anos de idade e 40 anos de instrução
-2. A soma de horas das atividades realizadas em um dia superam 24h
-3. Etc.
+
+Os valores individuais das variáveis podem não ser suspeitos, 
+mas a sua combinação pode ser
+
+- Participante com 12 anos de idade e com 40 anos de instrução
+- A soma de horas das atividades realizadas em um dia superam 24h
+- Etc.
 
 
 ## Crítica dos Dados
@@ -229,9 +336,9 @@ de confirmação (e em quais variáveis) e redigitação caso seja constatado er
 
 Em algumas vezes, pode ser útil que essa listagem seja gerada duas vezes: 
 
-- uma listagem ordenada por observação (útil para quem quem for verificar)
+- uma listagem ordenada por observação (útil para o verificador)
 
-- uma listagem ordenada por variável (útil para quem quem estiver programando)
+- uma listagem ordenada por variável (útil para o programador)
 
 ## Crítica dos Dados
 ### "Para saber mais, clique em ..."
@@ -285,7 +392,7 @@ Adequação do formato do conjunto de dados ao uso pretendido
 ## Formato do Conjunto de Dados
 ### Formato Largo (*Wide*) 
 Algumas funções que implementam técnicas estatísticas 
-(principalmente as de medidas repetidas) 
+(*e.g.*, análise de variância com medidas repetidas) 
 exigem os dados neste formato ...
 ```{r, echo=FALSE}
 data.frame(
@@ -297,8 +404,8 @@ data.frame(
 
 ## Formato do Conjunto de Dados
 ### Formato Longo (*Long*)
-... Já outras exigem os dados neste formato 
-(inclusive funções para gerar gráficos e visualizações)
+... já outras exigem os dados neste formato 
+(*e.g.*, funções para gerar gráficos e visualizações)
 ```{r, echo=FALSE}
 data.frame(
   suj = c(1, 1, 2, 2, 3, 3), 
@@ -403,6 +510,16 @@ de técnicas dessa área, mas simplesmente ser uma apresentação ao problema em
 Se a complexidade do problema estiver muito grande, procure se aconselhar com 
 alguém que já tenha lidado com isso antes.
 
+## Transformação de Variáveis
+### Dado Textual → Dado Qualitativo
+
+**Sugestão** 
+
+Se você tem pouca experiência:
+
+- Passe essa atividade para alguém que já saiba fazer isso
+- **OU**
+- Reserve um bocado de tempo para aprender a fazer isso direito.
 
 ## Transformação de Variáveis
 ### Dado Textual
@@ -441,23 +558,28 @@ data.frame(Nome = nome, nome = iconv(nome, to = "ASCII//TRANSLIT"))
 # Programe! Não faça manualmente!
 ## Programe! Não faça manualmente!
 
-- Processamento manual
-    - Erros assistemáticos
-        - Difíceis de detectar e de localizar
-- Processamento através de programação
-    - Erros sistemáticos
-        - Mais fáceis de detectar e de localizar
+Processamento manual dos dados  
+
+- Erros assistemáticos
+    - Difíceis de detectar e de localizar
+    
+Processamento dos dados através de programação  
+
+- Erros sistemáticos
+    - Mais fáceis de detectar e de localizar
 
 ## Programe! Não faça manualmente!
 
 *Por quê programar se posso fazer na unha?*
 
 1. Rastreabilidade
-    - “Esses dados estão certos?” (Você mesmo, após seis meses sem mexer nos dados)
+    - “Esses dados estão certos?” 
+        - Você mesmo, após seis meses sem mexer nos dados
 2. Documentação
-    - “O quê é que são esses dados mesmo?”  (*Idem*, *ibidem*)
+    - “O quê é que são esses dados mesmo?”  
+        - *Idem*, *ibidem*
 3. Reaproveitabilidade de esforço e de código 
-    - Lavoisier: "Nada se cria e nada se perde"
+    - Lavoisier: "Nada se cria e nada se perde: tudo se aproveita."
 
 # Boas Práticas
 ## Boas Práticas
@@ -475,16 +597,7 @@ e não haver uma cópia do original.
 
 Por isso, antes de começar a mexer nos dados, **crie uma cópia do arquivo de dados original e deixe-a fora da pasta de trabalho,** a salvo dos seus dedinhos.
 
-## Boas Práticas
-### Não jogue fora o original
-
-**É sério**: é muito comum mexer no arquivo original dos dados, 
-perceber que alguma ~~cagada~~ besteira foi feita 
-e não haver uma cópia do original.
-
-Por isso, antes de começar a mexer nos dados, **crie uma cópia do arquivo de dados original e deixe-a fora da pasta de trabalho,** a salvo dos seus dedinhos.
-
-Depois não diga que eu não avisei.
+- Depois não diga que eu não avisei.
 
 ## Boas Práticas
 ### Porque é tão fácil bagunçar um conjunto de dados no Excel
@@ -505,30 +618,38 @@ mas ela não te obriga a estruturar os dados para poder armazená-los.
 ### Porque é tão fácil bagunçar um conjunto de dados no Excel
 Metainformação implícita ao invés de explícita
 
-1. Metainformação = informação sobre a informação
-1. Pistas visuais (uso de cores, fontes, negrito etc.) para indicar metainformação 
-2. Metainformação armazenada em forma textual explícita permite que ela seja tratada através de um programa
+1. Metainformação na forma de pistas visuais
+    - uso de cores
+    - fontes, negrito, itálico
+    - etc.
+    - nada disso é processado por um programa de importação de dados
+2. Armazene metainformação em forma textual explícita
+    - Isso permitirá que ela seja processada pelo seu programa de importação
 
 ## Boas Práticas
-###  Variáveis Primárias e Variáveis Derivadas
-1. Fórmulas do Excel
-2. O demônio do *clica-e-arrasta*
-3. O demônio do *copy-paste*
+### Porque é tão fácil bagunçar um conjunto de dados no Excel
+
+Variáveis Primárias e Variáveis Derivadas
+
+- Variáveis derivadas criadas com *fórmulas* do Excel
+- Problemas:
+    - mais metainformação não processada pelo seu programa de importação de dados 
+    - multiplicação de fórmulas = mais chances de erro
+        - O Demônio do *Clica-e-Arrasta*
+        - O Demônio do *Copy-Paste*
 
 ## Boas Práticas
 ### Vetorização
 
-Para evitar loops explícitos
+Para evitar *loops* explícitos, pois *loops* explícitos são geralmente:
 
-Loops explícitos são geralmente:
-
-1. mais lentos, 
+1. mais lentos em R, 
 2. mais sujeitos a erros e 
 3. menos legíveis
 
 ## Boas Práticas
-### Loops explícitos são menos legíveis
-Loop explícito 
+### *Loops* explícitos são menos legíveis
+*Loop* explícito 
 ```{r, echo=TRUE, eval=FALSE}
 for (i in 1:10) {
     y[i] <- x[i] + 1
@@ -540,7 +661,7 @@ y <- x + 1
 ```
 
 ## Boas Práticas
-### Loops explícitos são mais sujeitos a erros
+### *Loops* explícitos são mais sujeitos a erros
 Queria ter escrito
 ```{r, echo=TRUE, eval=FALSE}
 for (i in 1:10) {
@@ -555,7 +676,7 @@ for (i in 1:100) {
 ```
 
 ## Boas Práticas
-### Loops explícitos são mais sujeitos a erros
+### *Loops* explícitos são mais sujeitos a erros
 Queria ter escrito
 ```{r, echo=TRUE, eval=FALSE}
 for (i in 1:10) {
@@ -570,7 +691,7 @@ for (i in 1:10) {
 ```
 
 ## Boas Práticas
-### Loops explícitos são mais sujeitos a erros
+### *Loops* explícitos são mais sujeitos a erros
 Queria ter escrito
 ```{r, echo=TRUE, eval=FALSE}
 for (i in 2:10) {
@@ -585,7 +706,7 @@ for (i in 1:10) {
 ```
 
 ## Boas Práticas
-### Loops explícitos são mais sujeitos a erros
+### *Loops* explícitos são mais sujeitos a erros
 Queria ter escrito
 ```{r, echo=TRUE, eval=FALSE}
 for (i in 2:10) {
@@ -622,11 +743,9 @@ que tenham exatamente as mesmas variáveis (colunas)
 
 Se você tem pouca experiência:
 
-* Passe essa atividade para alguém que já saiba fazer isso
-
-**OU**
-
-* Reserve um bocado de tempo para aprender a fazer isso direito.
+- Passe essa atividade para alguém que já saiba fazer isso
+- **OU**
+- Reserve um bocado de tempo para aprender a fazer isso direito.
 
 # Instalando e Rodando o Básico do R
 
@@ -640,199 +759,6 @@ Vá para a apresentação
 
 
 # Usando Pacotes do R para o Manuseio dos Dados
-## Atividades de Manuseio de Dados
-1. `Piping`
-2. Lendo/importando/escrevendo/exportando
-3. Visualização dos dados e da sua estrutura
-4. Manuseio das variáveis do conjunto de dados
-5. Manuseio das observações do conjunto de dados
-6. Convertendo entre os formatos longo e largo
-7. Manuseio de arquivos
-8. *Manuseio das observações e das variáveis*
-9. *Agregação os dados de um conjunto de dados*
-10. *Junção de conjuntos de dados*
 
-
-
-
-<!--
-
-# Índice Geral
-
-1. Princípios de tratamento e manuseio de dados
-    1. Objetivo: organizar o conjunto de dados para que possa ser analisado estatisticamente
-        1. importação a partir de um arquivo criado por outros programas
-        2. detecção e correção de potenciais erros de digitação, transcrição e manuseio
-            1. inconsistências
-            2. valores discrepantes (outliers)
-        3. adequação do formato do conjunto de dados e da formatação dos seus dados
-            1. formato longo (long) x formato largo (wide) para conjunto de dados
-            2. conversão de conjunto de dados
-        4. transformações de variáveis:
-            1. quantitativa → quantitativa
-                1. arredondamento
-                2. reexpressão em outras escalas
-            2. quantitativa → qualitativa
-                1. categorização
-            3. qualitativa → qualitativa
-                1. junções de categorias
-                2. renomeando categorias
-            4. textuais
-                1. filtragem de texto
-                2. identificação de presença de padrão
-                3. transformação de texto
-    2. Programe! Não faça manualmente!
-        1. rastreabilidade (“Essa bagaça está certa?”)
-        2. documentação (“Que bagaça é essa?”)
-        3. reaproveitabilidade (Lavoisier)
-    3. Organizando um conjunto de dados
-        1. sempre mantenha uma cópia do arquivo original a salvo fora da pasta de trabalho
-        2. porque é tão fácil um conjunto de dados no Excel estar bagunçado
-            1. exemplo de planilha de Excel zoada e principais erros
-            2. metainformação (informação sobre a informação) implícita ao invés de explícita 
-                1. uso de cores, fontes, negrito ou outras indicações visuais para codificar metainformação ao invés de apresentar textualmente essa metainformação, 
-                2. metainformação armazenada em forma textual permite que ela seja tratada programaticamente
-        3. variáveis primárias e variáveis derivadas
-            1. fórmulas do Excel
-            2. o demônio do clica-e-arrasta
-            3. o demônio do copy-paste
-    4. vetorização para evitar loops explícitos
-            1. loops explícitos são geralmente mais lentos, mais sujeitos a erros e menos legíveis
-2. Instalando e rodando o básico
-    1. Programa estatístico R
-    2. Ambiente de Desenvolvimento Integrado (IDE) R Studio
-    3. Abas e navegação no R Studio: acessando o help, visualizando gráficos, inspecionando variáveis, histórico de comandos, carregando pacotes
-    4. Instalação de pacotes do R através do R Studio: pacotes didáticos swirl, Rcmdr; pacote de importação e exportação de dados readxl; pacotes de manuseio de dados dplyr, tidyr, reshape, reshape2, lubridate, magrittr, pipeR, data.table, car
-    5. Rmarkdown *
-    6. Controle de versão com Git *
-3. Rudimentos da linguagem R
-    1. Tipos e estruturas de dados em R 
-        1. Tipos de dados: 
-            1. quantitativo (numeric), 
-            2. textual (character), 
-            3. lógico (logical), 
-            4. categórico (factor/ordered)
-            5. outros
-        2. estruturas de dados: 
-            1. vetorial (c, vector), 
-            2. lista/“dicionário” (list), 
-            3. matricial (array/matrix), 
-            4. conjunto de dados (data.frame)
-        3. atributos: 
-            1. names, 
-            2. levels, nlevels
-            3. dim, dimnames, 
-            4. rownames, colnames, 
-            5. ncols, nrows, 
-        4. “não-dados”
-            1. NA, NaN, Inf, NULL
-    2. Programação em R
-        1. operadores de atribuição: <– e =
-        2. operadores de extração (subscripting) 
-            1. [], [[]] e $
-            2. indexando nas linhas e colunas: 
-            3. vetores numéricos positivos ( 1:10 ) e negativos ( -2:-10 ), 
-            4. vetores lógicos 
-            5. vetores textuais
-            6. opção “drop = F”
-        3. instruções de repetições
-            1. for
-                1. 1:N, 
-                2. names, 
-                3. seq, seq_*
-            2. while, repeat
-            3. break, next
-        4. instruções de execução condicional
-            1. if e else
-            2. switch
-        5. funções e operações 
-            1. executando funções existentes
-            2. criando as suas próprias funções
-4. Usando pacotes do R para melhorar o trabalho de manuseio dos dados
-    1. Piping
-        1. magrittr (): %>%, %T>%, %<>%
-        2. pipeR (): %>>%
-    2. Lendo/importando/escrevendo/exportando dados para arquivo
-        1. base
-            1. save
-            2. load
-        2. utils
-            1. read.csv, read.csv2, read.delim, read.delim2 e read.table
-            2. tar, untar, zip e unzip
-        3. readxl
-            1. excel_sheets
-            2. read_excel
-        4. foreign
-            1. read.dta (Stata)
-            2. read.epiinfo
-            3. read.mpt (Minitab)
-            4. read.spss
-    3. Visualização dos dados e da sua estrutura
-        1. base
-            1. summary, table, 
-            2. unique
-        2. utils
-            1. str
-            2. fix
-            3. head e tail
-    4. Manuseio das variáveis do conjunto de dados
-        1. base
-            is.* (funções de verificação de tipos)
-            as.* (funções de conversão de tipos), 
-            cut
-            ifelse
-            gsub
-            iconv
-            paste e paste0
-        2. dplyr
-            select e rename
-            mutate e transmute
-        3. tidyr
-            separate
-            unite
-        4. car
-            recode
-        5. lubridate (processamento de strings de data e hora)
-    5. Manuseio das observações do conjunto de dados
-        1. base: 
-            1. grep*, 
-            2. regex*
-            3. is.na, is.nan, is.null, is.infinite
-            4. any, all
-        2. dplyr: 
-            1. filter
-            2. arrange
-    6. Convertendo o conjunto de dados entre formatos longo e largo
-        1. reshape2
-            1. melt
-            2. cast
-            3. acast e dcast
-            4. recast
-        2. tidyr
-            1. gather
-            2. spread
-    7. Manuseio de arquivos
-        1. base
-            1. get.wd, set.wd
-            2. dir, dir.create, dirnames
-            3. list.*
-            4. file.*
-    8. *Manuseio das observações e das variáveis de um conjunto de dados*
-        1. data.table
-    9. *Agregação dos dados de um conjunto de dados*
-        1. base
-            1. by
-            2. apply, *apply
-        2. dplyr
-            1. group_by
-            2. summarise
-    10. *Junção de conjuntos de dados*
-        1. base
-            1. cbind, rbind;  
-            2. merge
-        2. reshape
-            1. merge_all
-        3. dplyr
-            1,*_join 
-  
--->
+Vá para a apresentação  
+[Usando Pacotes do R para o Manuseio de Dados](pacotes.manuseio.dados.R.html)
