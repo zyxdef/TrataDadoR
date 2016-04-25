@@ -1,7 +1,11 @@
 ---
 title: "Tratamento e Manuseio de Dados com R"
 author: "Marcelo Ventura Freire (EACH/USP)"
-output: ioslides_presentation
+output: 
+  ioslides_presentation: 
+    fig_caption: yes
+    incremental: yes
+    transition: slower
 ---
 
 ```{r setup, include=FALSE, eval=FALSE}
@@ -228,6 +232,49 @@ Em algumas vezes, pode ser útil que essa listagem seja gerada duas vezes:
 - uma listagem ordenada por observação (útil para quem quem for verificar)
 
 - uma listagem ordenada por variável (útil para quem quem estiver programando)
+
+## Crítica dos Dados
+### "Para saber mais, clique em ..."
+
+"Ok, fiquei interessado pelo assunto de crítica e limpeza de dados."
+
+"Onde posso encontrar mais sobre o assunto?"
+
+## Crítica dos Dados
+### "Para saber mais, clique em ..."
+
+Google!  (*Id est*, te vira, negão!)
+
+Mas com os termos certos.
+
+- "Data Cleaning"
+- "Data Cleansing"
+- "Data Scrubbing"
+- "Data Design"
+- entre outros
+
+## Crítica dos Dados
+### "Para saber mais, clique em ..."
+
+Devido ao crescimento do interesse por *Big Data* 
+e por *Quantitative Analytics* em geral, 
+hoje em dia também há muita literatura interessante sobre o assunto 
+fora da Estatística e dentro da Computação em geral.
+
+## Crítica dos Dados
+### "Para saber mais, clique em ..."
+
+Por exemplo, é possível encontrar
+[isto](http://betterevaluation.org/sites/default/files/data_cleaning.pdf)...
+
+![http://betterevaluation.org/sites/default/files/data_cleaning.pdf](Data.Cleaning.jpeg)
+
+## Crítica dos Dados
+### "Para saber mais, clique em ..."
+
+... ou [isto](https://infoactive.co/data-design/ch08.html)
+
+![https://infoactive.co/data-design/ch08.html](Data.Design.jpeg)
 
 ## Formato do Conjunto de Dados
 Adequação do formato do conjunto de dados ao uso pretendido  
