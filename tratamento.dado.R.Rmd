@@ -12,7 +12,8 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-## O que veremos nesse curso
+#Tratamento e Manuseio de Dados com R
+## O que veremos
 1. Princípios de Tratamento e Manuseio de Dados
 2. Instalando e Rodando o Básico do R
 3. Rudimentos da Linguagem R
