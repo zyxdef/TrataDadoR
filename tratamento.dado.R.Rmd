@@ -144,7 +144,7 @@ Exemplos
         - nome longo para as categorias
             - para as ordinais: ordem entre as categorias
     - para variáveis derivadas: relação com as outras variáveis 
-        - $IMC = \frac{peso}{estatura^2}$
+        - $IMC = \frac{peso}{estatura^2} \Leftrightarrow$ `IMC = peso/estatura^2`
 
 ## Conjuntos de Dados
 ### Conjunto de Dados Estruturado
@@ -434,7 +434,7 @@ data.frame(
 1. Dado Quantitativo → Dado Quantitativo
 2. Dado Quantitativo → Dado Qualitativo
 3. Dado Qualitativo → Dado Qualitativo
-4. Dado Textual → Dado Qualitativo
+4. Dado Textual → Dado Qualitativo/Quantitativo
 
 ## Transformação de Variáveis
 ### Dado Quantitativo → Dado Quantitativo
@@ -493,13 +493,13 @@ data.frame(
 ```
 
 ## Transformação de Variáveis
-### Dado Textual → Dado Qualitativo
+### Dado Textual → Dado Qualitativo/Quantitativo
 1. Filtragem de texto
 2. Identificação de presença de padrão
 3. Transformação de texto
 
 ## Transformação de Variáveis
-### Dado Textual → Dado Qualitativo
+### Dado Textual → Dado Qualitativo/Quantitativo
 
 Na verdade, uma área inteira de análise de dados é baseada nessa ideia: 
 a análise estatística de um *corpus* textual.
@@ -511,7 +511,7 @@ Se a complexidade do problema estiver muito grande, procure se aconselhar com
 alguém que já tenha lidado com isso antes.
 
 ## Transformação de Variáveis
-### Dado Textual → Dado Qualitativo
+### Dado Textual → Dado Qualitativo/Quantitativo
 
 **Sugestão** 
 
@@ -583,6 +583,10 @@ Processamento dos dados através de programação
 
 # Boas Práticas
 ## Boas Práticas
+
+- ![](se-o-pica-pau-tivesse-comunicado-a-policia-nada.jpg)
+
+## Boas Práticas
 1. Não jogue fora o original
 2. Porque é tão fácil bagunçar um conjunto de dados no Excel
 3. Variáveis primárias *vs* variáveis derivadas
@@ -607,12 +611,12 @@ Por isso, antes de começar a mexer nos dados, **crie uma cópia do arquivo de d
 ## Boas Práticas
 ### Porque é tão fácil bagunçar um conjunto de dados no Excel
 
-Uma planilha eletrônica é para armazenar dados não estruturados.  
+- O conceito de planilha eletrônica foi desenvolvido para armazenar dados não estruturados.  
 
-Ela pode ser usada para armanzenar dados estruturados, 
+- Ela pode ser usada para armanzenar dados estruturados, 
 mas ela não te obriga a estruturar os dados para poder armazená-los.
 
-
+- É aí que nasce o problema
 
 ## Boas Práticas
 ### Porque é tão fácil bagunçar um conjunto de dados no Excel
@@ -637,6 +641,15 @@ Variáveis Primárias e Variáveis Derivadas
     - multiplicação de fórmulas = mais chances de erro
         - O Demônio do *Clica-e-Arrasta*
         - O Demônio do *Copy-Paste*
+
+## Boas Práticas
+### Porque é tão fácil bagunçar um conjunto de dados no Excel
+
+Variáveis Primárias e Variáveis Derivadas
+
+- Solução:
+    - armazene na sua planilha Excel exclusivamente as variáveis primárias
+    - deixe para calcular todas as variáveis derivadas no seu programa
 
 ## Boas Práticas
 ### Vetorização
