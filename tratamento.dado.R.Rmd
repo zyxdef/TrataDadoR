@@ -12,15 +12,31 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+
+
+
+
 #Tratamento e Manuseio de Dados com R
+
+
+
 ## O que veremos
+
 1. Princípios de Tratamento e Manuseio de Dados
 2. Instalando e Rodando o Básico do R
 3. Rudimentos da Linguagem R
 4. Usando Pacotes do R para o Manuseio dos Dados
 
+
+
+
+
 # Princípios de Tratamento e Manuseio de Dados  
+
+
+
 ## Princípios
+
 ### Objetivo
 
 Organizar o conjunto de dados para que possa ser analisado estatisticamente
@@ -31,8 +47,16 @@ Organizar o conjunto de dados para que possa ser analisado estatisticamente
 3. Boas Práticas
 4. Integração de Dois ou Mais Conjuntos de Dados
 
+
+
+
+
 # Conjuntos de Dados
+
+
+
 ## Conjuntos de Dados
+
 ### Conceitos 
 
 - Observação
@@ -41,7 +65,10 @@ Organizar o conjunto de dados para que possa ser analisado estatisticamente
 - Conjunto de dados estruturado
 - Conjunto de dados não estruturado
 
+
+
 ## Conjuntos de Dados
+
 ### Observação
 
 - Unidade provedora de informação individual
@@ -50,18 +77,27 @@ Organizar o conjunto de dados para que possa ser analisado estatisticamente
     - uma tentativa de execução de uma tarefa
     - uma realização de um teste
 
+
+
 ## Conjuntos de Dados
+
 ### Observação
 
 A escolha adequada depende do contexto do _**seu**_ problema.
 
 Um exemplo:
 
-20 participantes são divididos em um grupo de controle e um grupo de tratamento, cada um com 10 participantes.  
+20 participantes são divididos em um grupo de controle e um grupo de tratamento, 
+cada um com 10 participantes.  
 
-Serão administrados um comprimido com uma dosagem de cafeina aos participantes do grupo de tratamento e um comprimido inerte aos participantes do grupo controle.
+Serão administrados um comprimido com uma dosagem de cafeina aos participantes 
+do grupo de tratamento e um comprimido inerte aos participantes do grupo 
+controle.
+
+
 
 ## Conjuntos de Dados
+
 ### Observação
 
 Se registrarmos uma medida de atenção apenas após a administração do comprimido
@@ -69,21 +105,28 @@ Se registrarmos uma medida de atenção apenas após a administração do compri
 - uma observação será a resposta de cada participante
     - simples assim
 
+
+
 ## Conjuntos de Dados
+
 ### Observação
 
-Se registrarmos uma medida de atenção *antes* e uma *depois* a administração do comprimido
+Se registrarmos uma medida de atenção *antes* e uma *depois* a administração do 
+comprimido
 
 - uma observação poderá será a resposta de cada participante
     - em cada observação: uma medição *pré-intervenção* 
-    e uma medição *pós-intervenção* 
+        e uma medição *pós-intervenção* 
     - cada participante gerará uma única observação
 - uma observação poderá será a resposta de cada participante em cada condição
     - em cada observação: uma condição de medição (*pré* ou *pós*) 
-    e a medição sob essa condição
+        e a medição sob essa condição
     - cada participante gerará duas observações
 
+
+
 ## Conjuntos de Dados
+
 ### Observação
 
 Qual é a melhor escolha?
@@ -95,7 +138,10 @@ Qual é a melhor escolha?
         - conversão entre formatos
             - mais adiante
 
+
+
 ## Conjuntos de Dados
+
 ### Variável
 
 - Atributos ou características de interesse nas observações
@@ -106,7 +152,10 @@ Qual é a melhor escolha?
     - Primárias: latitude e longitude
         - Derivada: fuso horário oficial
 
+
+
 ## Conjuntos de Dados
+
 ### Variável
 
 - Podem ser *quantitativas* ou *qualitativas*
@@ -119,7 +168,10 @@ Qual é a melhor escolha?
     - É possível a conversão entre esses tipos:
         - Contínua > Discreta > Ordinal > Nominal
 
+
+
 ## Conjuntos de Dados
+
 ### Variável
 
 Exemplos
@@ -132,7 +184,10 @@ Exemplos
     - dominante *vs* recessivo
     - homozig. dominante *vs* heterozig. *vs* homozig. recessivo
 
+
+
 ## Conjuntos de Dados
+
 ### Metainformação
 
 "Informação sobre a informação"
@@ -147,14 +202,20 @@ Exemplos
     - para variáveis derivadas: relação com as outras variáveis 
         - $IMC = \frac{peso}{estatura^2} \Leftrightarrow$ `IMC = peso/estatura^2`
 
+
+
 ## Conjuntos de Dados
+
 ### Conjunto de Dados Estruturado
     
 - *Linha = Observação*
 - Todas as linhas contêm os valores das mesmas variáveis e na mesma sequência
 - O conjunto de dados contém metainformações
 
+
+
 ## Conjuntos de Dados
+
 ### Conjunto de Dados Estruturado
 
 *Linha = Observação*
@@ -162,7 +223,10 @@ Exemplos
 - cada linha contém os dados de uma única observação
 - os dados de uma mesma observação estão todos em uma única linha
 
+
+
 ## Conjuntos de Dados
+
 ### Conjunto de dados estruturado
     
 Todas as linhas contêm os valores das mesmas variáveis e na mesma sequência
@@ -176,7 +240,10 @@ Todas as linhas contêm os valores das mesmas variáveis e na mesma sequência
     João   Silva  23     1,67   Solteiro
     Maria  Alves  32     1,63   Casado
 
+
+
 ## Conjuntos de Dados
+
 ### Conjunto de Dados Estruturado
 
 O conjunto de dados contém as metainformações referentes aos dados
@@ -192,7 +259,10 @@ O conjunto de dados contém as metainformações referentes aos dados
     Estatura: "%4.2f"
     Estatura: (0, 3)
 
+
+
 ## Conjuntos de Dados
+
 ### Conjunto de Dados Não Estruturado
 
 - Cada linha pode conter os dados de mais do que uma observação
@@ -202,12 +272,23 @@ O conjunto de dados contém as metainformações referentes aos dados
 - As variáveis podem aparecer em qualquer ordem
 - O conjunto de dados pode não conter metainformações
 
+
+
+
+
+
 # Organizando um Conjunto de Dados
+
+
+
 ## Organizando um Conjunto de Dados
+
 1. Importação a partir de um arquivo criado por outros programas
 2. Crítica dos dados
 3. Formato do conjunto de dados
 4. Transformações de variáveis
+
+
 
 ## Importação dos Dados
 
@@ -216,16 +297,19 @@ Origens possíveis para os dados
 - Excel
 - Google Forms
 - Coleta biométrica de dados
-(e.g., sensores, actímetro, *eye tracking* etc.)
+    (e.g., sensores, actímetro, *eye tracking* etc.)
 - Dados armazenados em arquivos de outros programas estatísticos 
-(SPSS, Stata, Minitab, SAS etc.)
+    (SPSS, Stata, Minitab, SAS etc.)
 - Dados oriundos de sistemas de gerenciamento de bancos de dados (SGBD), 
-extraídos via, e.g., SQL
+    extraídos via, e.g., SQL
 - Dados não estruturados coletados eletronicamente
-(e.g., *log* das buscas realizadas no Google em um intervalo de uma hora)
+    (e.g., *log* das buscas realizadas no Google em um intervalo de uma hora)
+
+
 
 ## Crítica dos Dados
-Detecção e correção de potenciais erros de digitação, transcrição e manuseio, bem como orientação para realização das correções
+Detecção e correção de potenciais erros de digitação, transcrição e manuseio, 
+bem como orientação para realização das correções
 
                                         "Shit happens" (Confúcio)
                                         "... all the time" (Lao Tse)
@@ -237,9 +321,14 @@ Detecção e correção de potenciais erros de digitação, transcrição e manu
 5. Inconsistências
 6. Listagem de valores a serem verificados
 
+
+
 ## Crítica dos Dados
+
 ### Padrões de Erros
+
 Começou em uma linha e passou para a próxima sem perceber 
+
 ```{r, echo = F}
 data.frame(
   A = c("   1", "   2", "   1", "    ", "   4"),
@@ -251,9 +340,14 @@ data.frame(
 )
 ```
 
+
+
 ## Crítica dos Dados
+
 ### Padrões de Erros
+
 Pulou uma coluna, deixou em branco e continuou na seguinte
+
 ```{r, echo = F}
 data.frame(
   A = c("   1", "   2", "   1", "   4"),
@@ -266,9 +360,14 @@ data.frame(
 )
 ```
 
+
+
 ## Crítica dos Dados
+
 ### Padrões de Erros
+
 Digitou sobre uma célula já preenchida ou pulou um valor
+
 ```{r, echo = F}
 data.frame(
   A = c("   1", "   2", "   1", "   4"),
@@ -280,29 +379,44 @@ data.frame(
 )
 ```
 
+
+
 ## Crítica dos Dados
+
 ### Valores Não Razoáveis
 
-Muitas variáveis quantitativas têm intervalos de valores possíveis claramente definidos.  
+Muitas variáveis quantitativas têm intervalos de valores possíveis claramente 
+definidos.  
 
-Valores fora desses intervalos são suspeitos e devem ser confirmados individualmente.
+Valores fora desses intervalos são suspeitos e devem ser confirmados 
+individualmente.
 
 Exemplo: idade superior a 100 anos
 
 - não é um erro
 - mas é raro
 
+
+
 ## Crítica dos Dados
+
 ### Valores Discrepantes
+
 Queria ter digitado `12.34`, mas digitou `124`
+
 ```{r, fig.height=3, fig.width=5}
 tempo <- c(12.36, 12.42, 124, 11.99, 10.77, 11.05, 13.20)
 boxplot(tempo, horizontal = T)
 ```
    
+
+
 ## Crítica dos Dados
+
 ### Uso inconsistente dos nomes de categorias
+
 Mais de um rótulo para a mesma categoria
+
 ```{r, echo = F}
 data.frame(
   Sexo    = c("   M", "Masc", "   F", "   f"),
@@ -312,18 +426,23 @@ data.frame(
 )
 ```
 
+
+
 ## Crítica dos Dados
+
 ### Inconsistências
 
-Os valores individuais das variáveis podem não ser suspeitos, 
-mas a sua combinação pode ser
+Os valores individuais das variáveis podem não ser suspeitos, mas a sua 
+combinação pode ser
 
 - Participante com 12 anos de idade e com 40 anos de instrução
 - A soma de horas das atividades realizadas em um dia superam 24h
 - Etc.
 
 
+
 ## Crítica dos Dados
+
 ### Listagem de Valores a Serem Verificados
 
 Algumas vezes, esses erros podem ser corrigidos na fase de importação e crítica,
@@ -332,7 +451,10 @@ mas, na maioria da vezes, não.
 Por isso, é útil gerar uma listagem individualizando quais observações precisam 
 de confirmação (e em quais variáveis) e redigitação caso seja constatado erro. 
 
+
+
 ## Crítica dos Dados
+
 ### Listagem de Valores a Serem Verificados
 
 Em algumas vezes, pode ser útil que essa listagem seja gerada duas vezes: 
@@ -341,14 +463,20 @@ Em algumas vezes, pode ser útil que essa listagem seja gerada duas vezes:
 
 - uma listagem ordenada por variável (útil para o programador)
 
+
+
 ## Crítica dos Dados
+
 ### "Para saber mais, clique em ..."
 
 "Ok, fiquei interessado pelo assunto de crítica e limpeza de dados."
 
 "Onde posso encontrar mais sobre o assunto?"
 
+
+
 ## Crítica dos Dados
+
 ### "Para saber mais, clique em ..."
 
 Google!  (*Id est*, te vira, negão!)
@@ -361,7 +489,10 @@ Mas com os termos certos.
 - "Data Design"
 - entre outros
 
+
+
 ## Crítica dos Dados
+
 ### "Para saber mais, clique em ..."
 
 Devido ao crescimento do interesse por *Big Data* 
@@ -369,32 +500,49 @@ e por *Quantitative Analytics* em geral,
 hoje em dia também há muita literatura interessante sobre o assunto 
 fora da Estatística e dentro da Computação em geral.
 
+
+
 ## Crítica dos Dados
+
 ### "Para saber mais, clique em ..."
 
 Por exemplo, é possível encontrar
-[isto](http://betterevaluation.org/sites/default/files/data_cleaning.pdf)...
+[isto](http://betterevaluation.org/sites/default/files/data_cleaning.pdf)
+
+<http://betterevaluation.org/sites/default/files/data_cleaning.pdf>
 
 ![http://betterevaluation.org/sites/default/files/data_cleaning.pdf](Data.Cleaning.jpeg)
 
+
+
 ## Crítica dos Dados
+
 ### "Para saber mais, clique em ..."
 
-... ou [isto](https://infoactive.co/data-design/ch08.html)
+ou [isto](https://infoactive.co/data-design/ch08.html)
+
+<https://infoactive.co/data-design/ch08.html>
 
 ![https://infoactive.co/data-design/ch08.html](Data.Design.jpeg)
 
+
+
 ## Formato do Conjunto de Dados
+
 Adequação do formato do conjunto de dados ao uso pretendido  
 
 1. Formato largo *vs* formato longo
 2. Conversão de conjunto de dados de um formato para o outro
 
+
+
 ## Formato do Conjunto de Dados
+
 ### Formato Largo (*Wide*) 
-Algumas funções que implementam técnicas estatísticas 
-(*e.g.*, análise de variância com medidas repetidas) 
-exigem os dados neste formato ...
+
+Algumas funções que implementam técnicas estatísticas (*e.g.*, análise de 
+variância com medidas repetidas) exigem os dados neste formato ...
+
 ```{r, echo=FALSE}
 data.frame(
   suj = c(1, 2, 3), 
@@ -403,10 +551,15 @@ data.frame(
   )
 ```
 
+
+
 ## Formato do Conjunto de Dados
+
 ### Formato Longo (*Long*)
-... já outras exigem os dados neste formato 
-(*e.g.*, funções para gerar gráficos e visualizações)
+
+... já outras exigem os dados neste formato (*e.g.*, funções para gerar 
+gráficos e visualizações)
+
 ```{r, echo=FALSE}
 data.frame(
   suj = c(1, 1, 2, 2, 3, 3), 
@@ -415,9 +568,12 @@ data.frame(
   )
 ```
 
+
+
 ## Formato do Conjunto de Dados
-### Conversão de um formato para o outro
-conforme a necessidade
+
+### Conversão de um formato para o outro conforme a necessidade
+
 ```{r, echo=FALSE}
 data.frame(
   suj = c(1, 2, 3), 
@@ -431,38 +587,61 @@ data.frame(
   )
 ```
 
-## Transformação de Variáveis
-1. Dado Quantitativo → Dado Quantitativo
-2. Dado Quantitativo → Dado Qualitativo
-3. Dado Qualitativo → Dado Qualitativo
-4. Dado Textual → Dado Qualitativo/Quantitativo
+
 
 ## Transformação de Variáveis
-### Dado Quantitativo → Dado Quantitativo
+
+1. Dado Quantitativo $\rightarrow$ Dado Quantitativo
+2. Dado Quantitativo $\rightarrow$ Dado Qualitativo
+3. Dado Qualitativo $\rightarrow$ Dado Qualitativo
+4. Dado Textual $\rightarrow$ Dado Qualitativo/Quantitativo
+
+
+
+## Transformação de Variáveis
+
+### Dado Quantitativo $\rightarrow$ Dado Quantitativo
+
 #### Arredondamento
+
 ```{r}
 tempos <- c(314.326, 42.597, 0.817, 7.914, 197.314, 12.480)
 round(tempos, 1)
 round(tempos)
 ```
 
+
+
 ## Transformação de Variáveis
-### Dado Quantitativo → Dado Quantitativo
+
+### Dado Quantitativo $\rightarrow$ Dado Quantitativo
+
 #### Reexpressão em outras escalas
+
 ```{r, fig.height=3, fig.width=5}
 boxplot(tempos, horizontal = T)
 ```
 
+
+
 ## Transformação de Variáveis
-### Dado Quantitativo → Dado Quantitativo
+
+### Dado Quantitativo $\rightarrow$ Dado Quantitativo
+
 #### Reexpressão em outras escalas
+
 ```{r, fig.height=3, fig.width=5}
 boxplot(log(tempos), horizontal = T)
 ```
 
+
+
 ## Transformação de Variáveis
-### Dado Quantitativo → Dado Qualitativo
+
+### Dado Quantitativo $\rightarrow$ Dado Qualitativo
+
 #### Categorização
+
 ```{r}
 idades <- c(8, 12, 17, 21, 25, 40, 80)
 cortes <- c(0, 12, 17, 59, Inf)
@@ -471,9 +650,14 @@ data.frame(idade = idades,
     faixa.etária = cut(idades, breaks = cortes, labels = categs))
 ```
 
+
+
 ## Transformação de Variáveis
-### Dado Qualitativo → Dado Qualitativo
+
+### Dado Qualitativo $\rightarrow$ Dado Qualitativo
+
 #### Junções de categorias
+
 ```{r}
 cortes2 <- c(0, 17, Inf)
 categs2 <- c("menor", "maior")
@@ -482,9 +666,14 @@ data.frame(idade = idades,
     status.legal = cut(idades, breaks = cortes2, labels = categs2))
 ```
 
+
+
 ## Transformação de Variáveis
-### Dado Qualitativo → Dado Qualitativo
+
+### Dado Qualitativo $\rightarrow$ Dado Qualitativo
+
 #### Renomeando categorias
+
 ```{r}
 categs3 <- c("F1", "F2", "F3", "F4")
 data.frame(
@@ -493,26 +682,36 @@ data.frame(
     faixa = cut(idades, breaks = cortes, labels = categs3))
 ```
 
+
+
 ## Transformação de Variáveis
-### Dado Textual → Dado Qualitativo/Quantitativo
+
+### Dado Textual $\rightarrow$ Dado Qualitativo/Quantitativo
+
 1. Filtragem de texto
 2. Identificação de presença de padrão
 3. Transformação de texto
 
+
+
 ## Transformação de Variáveis
-### Dado Textual → Dado Qualitativo/Quantitativo
 
-Na verdade, uma área inteira de análise de dados é baseada nessa ideia: 
-a análise estatística de um *corpus* textual.
+### Dado Textual $\rightarrow$ Dado Qualitativo/Quantitativo
 
-O que veremos aqui não tem a pretensão de ser uma introdução aos conjuntos 
-de técnicas dessa área, mas simplesmente ser uma apresentação ao problema em si.
+Na verdade, uma área inteira de análise de dados é baseada nessa ideia: a 
+análise estatística de um *corpus* textual.
+
+O que veremos aqui não tem a pretensão de ser uma introdução aos conjuntos de 
+técnicas dessa área, mas simplesmente ser uma apresentação ao problema em si.
 
 Se a complexidade do problema estiver muito grande, procure se aconselhar com 
 alguém que já tenha lidado com isso antes.
 
+
+
 ## Transformação de Variáveis
-### Dado Textual → Dado Qualitativo/Quantitativo
+
+### Dado Textual $\rightarrow$ Dado Qualitativo/Quantitativo
 
 **Sugestão** 
 
@@ -522,41 +721,68 @@ Se você tem pouca experiência:
 - **OU**
 - Reserve um bocado de tempo para aprender a fazer isso direito.
 
+
+
 ## Transformação de Variáveis
+
 ### Dado Textual
+
 #### Filtragem de texto
+
 ```{r}
 nomes <- c("Marcos", "marcos", "Pedro", "pEDRO", "maRcoS", "MARCOS")
 data.frame(Nome = nomes, seq = seq(nomes))
 ```
 
+
+
 ## Transformação de Variáveis
+
 ### Dado Textual
+
 #### Filtragem de texto
+
 ```{r}
 filtro <- tolower(nomes) == "marcos"
 data.frame(Nome = nomes, seq = seq(nomes))[filtro, ]
 filtro
 ```
 
+
+
 ## Transformação de Variáveis
+
 ### Dado Textual
+
 #### Identificação de presença de padrão
+
 ```{r}
 comentário <- c("gostei", "não gosto", "agosto", "odiei Gião")
 data.frame(o.que.disse = comentário, 
     referência.ao.verbo.gostar = grepl("(^|[ ])gost[^ ]+", comentário))
 ```
 
+
+
 ## Transformação de Variáveis
+
 ### Dado Textual
+
 #### Transformação de texto
+
 ```{r}
 nome <- c("Márcia", "Mârcia", "Marcia", "Marcîa")
 data.frame(Nome = nome, nome = iconv(nome, to = "ASCII//TRANSLIT"))
 ```
 
+
+
+
+
 # Programe! Não faça manualmente!
+
+
+
 ## Programe! Não faça manualmente!
 
 Processamento manual dos dados  
@@ -568,6 +794,8 @@ Processamento dos dados através de programação
 
 - Erros sistemáticos
     - Mais fáceis de detectar e de localizar
+
+
 
 ## Programe! Não faça manualmente!
 
@@ -582,45 +810,66 @@ Processamento dos dados através de programação
 3. Reaproveitabilidade de esforço e de código 
     - Lavoisier: "Nada se cria e nada se perde: tudo se aproveita."
 
+
+
 # Boas Práticas
+
 ## Boas Práticas
 
 - ![](se-o-pica-pau-tivesse-comunicado-a-policia-nada.jpg)
 
+
+
 ## Boas Práticas
+
 1. Não jogue fora o original
 2. Porque é tão fácil bagunçar um conjunto de dados no Excel
 3. Variáveis primárias *vs* variáveis derivadas
 4. **Vetorização**
 
+
+
 ## Boas Práticas
+
 ### Não jogue fora o original
 
 **É sério**: é muito comum mexer no arquivo original dos dados, 
 perceber que alguma ~~cagada~~ besteira foi feita 
 e não haver uma cópia do original.
 
-Por isso, antes de começar a mexer nos dados, **crie uma cópia do arquivo de dados original e deixe-a fora da pasta de trabalho,** a salvo dos seus dedinhos.
+Por isso, antes de começar a mexer nos dados, **crie uma cópia do arquivo de 
+dados original e deixe-a fora da pasta de trabalho,** a salvo dos seus dedinhos.
 
 - Depois não diga que eu não avisei.
 
+
+
 ## Boas Práticas
+
 ### Porque é tão fácil bagunçar um conjunto de dados no Excel
 
 ![](planilhazoada.2.png)
 
+
+
 ## Boas Práticas
+
 ### Porque é tão fácil bagunçar um conjunto de dados no Excel
 
-- O conceito de planilha eletrônica foi desenvolvido para armazenar dados não estruturados.  
+- O conceito de planilha eletrônica foi desenvolvido para armazenar dados não 
+estruturados.  
 
-- Ela pode ser usada para armanzenar dados estruturados, 
-mas ela não te obriga a estruturar os dados para poder armazená-los.
+- Ela pode ser usada para armanzenar dados estruturados, mas ela não te obriga 
+a estruturar os dados para poder armazená-los.
 
 - É aí que nasce o problema
 
+
+
 ## Boas Práticas
+
 ### Porque é tão fácil bagunçar um conjunto de dados no Excel
+
 Metainformação implícita ao invés de explícita
 
 1. Metainformação na forma de pistas visuais
@@ -631,19 +880,26 @@ Metainformação implícita ao invés de explícita
 2. Armazene metainformação em forma textual explícita
     - Isso permitirá que ela seja processada pelo seu programa de importação
 
+
+
 ## Boas Práticas
+
 ### Porque é tão fácil bagunçar um conjunto de dados no Excel
 
 Variáveis Primárias e Variáveis Derivadas
 
 - Variáveis derivadas criadas com *fórmulas* do Excel
 - Problemas:
-    - mais metainformação não processada pelo seu programa de importação de dados 
+    - mais metainformação não processada pelo seu programa de importação de 
+        dados 
     - multiplicação de fórmulas = mais chances de erro
         - O Demônio do *Clica-e-Arrasta*
         - O Demônio do *Copy-Paste*
 
+
+
 ## Boas Práticas
+
 ### Porque é tão fácil bagunçar um conjunto de dados no Excel
 
 Variáveis Primárias e Variáveis Derivadas
@@ -652,7 +908,10 @@ Variáveis Primárias e Variáveis Derivadas
     - armazene na sua planilha Excel exclusivamente as variáveis primárias
     - deixe para calcular todas as variáveis derivadas no seu programa
 
+
+
 ## Boas Práticas
+
 ### Vetorização
 
 Para evitar *loops* explícitos, pois *loops* explícitos são geralmente:
@@ -661,95 +920,141 @@ Para evitar *loops* explícitos, pois *loops* explícitos são geralmente:
 2. mais sujeitos a erros e 
 3. menos legíveis
 
+
+
 ## Boas Práticas
+
 ### *Loops* explícitos são menos legíveis
+
 *Loop* explícito 
+
 ```{r, echo=TRUE, eval=FALSE}
 for (i in 1:10) {
     y[i] <- x[i] + 1
 }
 ```
+
 Versão vetorizada
+
 ```{r, echo=TRUE, eval=FALSE}
 y <- x + 1
 ```
 
+
+
 ## Boas Práticas
+
 ### *Loops* explícitos são mais sujeitos a erros
+
 Queria ter escrito
+
 ```{r, echo=TRUE, eval=FALSE}
 for (i in 1:10) {
     y[i] <- x[i] + 1
 }
 ```
+
 mas acabou escrevendo
+
 ```{r, echo=TRUE, eval=FALSE}
 for (i in 1:100) {
     y[i] <- x[i] + 1
 }
 ```
 
+
+
 ## Boas Práticas
+
 ### *Loops* explícitos são mais sujeitos a erros
+
 Queria ter escrito
+
 ```{r, echo=TRUE, eval=FALSE}
 for (i in 1:10) {
     y[i] <- x[i] + 1
 }
 ```
+
 mas acabou escrevendo
+
 ```{r, echo=TRUE, eval=FALSE}
 for (i in 1:10) {
     y[i] <- x[j] + 1
 }
 ```
 
+
+
 ## Boas Práticas
+
 ### *Loops* explícitos são mais sujeitos a erros
+
 Queria ter escrito
+
 ```{r, echo=TRUE, eval=FALSE}
 for (i in 2:10) {
     y[i] <- x[i-1]
 }
 ```
+
 mas acabou escrevendo
+
 ```{r, echo=TRUE, eval=FALSE}
 for (i in 1:10) {
     y[i] <- x[i-1]
 }
 ```
 
+
+
 ## Boas Práticas
+
 ### *Loops* explícitos são mais sujeitos a erros
+
 Queria ter escrito
+
 ```{r, echo=TRUE, eval=FALSE}
 for (i in 2:10) {
     y[i] <- x[i-1]
 }
 ```
+
 mas acabou escrevendo
+
 ```{r, echo=TRUE, eval=FALSE}
 for (i in 2:10) {
     y[i] <- x[i-10]
 }
 ```
 
+
+
+
+
 # Integrando Conjuntos de Dados
+
+
+
 ## Integrando Conjuntos de Dados
 
-A integração de dois ou mais conjuntos de dados envolve um grau de complexidade maior 
-do que a organização de um conjunto de dados individual.
+A integração de dois ou mais conjuntos de dados envolve um grau de complexidade 
+maior do que a organização de um conjunto de dados individual.
+
+
 
 ## Integrando Conjuntos de Dados
 
 O grau de complexidade pode variar
 
-- simplesmente juntar em um conjunto de dados unificado 
-as observações (linhas) de conjuntos de dados 
-que tenham exatamente as mesmas variáveis (colunas)
+- simplesmente juntar em um conjunto de dados unificado as observações (linhas) 
+    de conjuntos de dados que tenham exatamente as mesmas variáveis (colunas)
     - caso mais simples
-- realizar agregações em níveis diferentes em cada conjunto de dados até que todos os conjunto de dados tenham observações (linhas) associáveis entre si
+- realizar agregações em níveis diferentes em cada conjunto de dados até que 
+    todos os conjunto de dados tenham observações (linhas) associáveis entre si
     - caso bem menos simples
+
+
 
 ## Integrando Conjuntos de Dados
 
@@ -761,15 +1066,27 @@ Se você tem pouca experiência:
 - **OU**
 - Reserve um bocado de tempo para aprender a fazer isso direito.
 
+
+
+
+
 # Instalando e Rodando o Básico do R
 
 Vá para a apresentação  
 [Instalando e Rodando o Básico do R](../InstalaR/instalando.rodando.R.html)
 
+
+
+
+
 # Rudimentos da Linguagem R
 
 Vá para a apresentação  
 [Rudimentos da Linguagem R](../IntroLingR/rudimentos.linguagem.R.html)
+
+
+
+
 
 
 # Usando Pacotes do R para o Manuseio dos Dados
