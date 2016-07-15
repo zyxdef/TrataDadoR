@@ -224,6 +224,18 @@ extraídos via, e.g., SQL
 - Dados não estruturados coletados eletronicamente
 (e.g., *log* das buscas realizadas no Google em um intervalo de uma hora)
 
+## Importação dos Dados
+
+Problemas que podem ocorrer na importação dos dados
+
+- mais de um *encoding* utilizado no conjunto de arquivos a serem importados
+    - ASCII puro
+    - ISO 8859, ISO 8859-1, ISO 8859-15 (padrões do Windows no ocidente)
+    - Unicode (ISO 10646), UTF-32, UTF-16, UTF-8 (padrão web atual)
+- várias abas dentro da mesma planilhas do Excel
+- formato de arquivo desconhecido
+- arquivos corrompidos
+
 ## Crítica dos Dados
 Detecção e correção de potenciais erros de digitação, transcrição e manuseio, bem como orientação para realização das correções
 

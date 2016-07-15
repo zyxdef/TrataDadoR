@@ -42,36 +42,39 @@ knitr::opts_chunk$set(echo = FALSE)
 ## Lendo, importando, escrevendo, exportando
 
 1. pacote `base`
-    1. save
-    2. load
-1. pacote `utils`
-    1. read.csv, read.csv2, read.delim, read.delim2 e read.table
-    2. tar, untar, zip e unzip
+    - `save()`, `load()`
+1. pacote `utils`: 
+    - `read.csv()`, `read.csv2()`, `read.delim()`, `read.delim2()`, 
+    `read.table()`,
+    `tar()`, `untar()`, `zip()`, `unzip()`
 1. pacote `foreign`
-    1. read.dta (Stata)
-    2. read.epiinfo
-    3. read.mpt (Minitab)
-    4. read.spss
+    - `read.dta()`, `read.epiinfo()`, `read.mpt()`, `read.spss()`
 1. pacote `readxl`
-    1. excel_sheets
-    2. read_excel
+    - `excel_sheets()`, `read_excel()`
 
 ## Lendo, importando, escrevendo, exportando
 1. pacote `base`
-    1. save
-    2. load
+    1. `save()`
+    2. `load()`
 
 ## Lendo, importando, escrevendo, exportando
 1. pacote `utils`
-    1. read.csv, read.csv2, read.delim, read.delim2 e read.table
-    2. tar, untar, zip e unzip
+    1. `read.csv()`
+    1. `read.csv2()`
+    1. `read.delim()`
+    1. `read.delim2()`
+    1. `read.table()`
+    2. `tar()`, 
+    2. `untar()`
+    2. `zip()`
+    2. `unzip()`
 
 ## Lendo, importando, escrevendo, exportando
 1. pacote `foreign`
-    1. read.dta (Stata)
-    2. read.epiinfo
-    3. read.mpt (Minitab)
-    4. read.spss
+    1. `read.dta()`
+    2. `read.epiinfo()`
+    3. `read.mpt()` 
+    4. `read.spss()`
 
 ## Lendo, importando, escrevendo, exportando
 1. pacote `readxl`
@@ -95,7 +98,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 1. pacote `base`
     is.* (funções de verificação de tipos)
-    as.* (funções de conversão de tipos), 
+    as.* (funções de conversão de tipos)
     cut
     ifelse
     gsub
