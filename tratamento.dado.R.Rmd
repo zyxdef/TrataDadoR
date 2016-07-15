@@ -1105,3 +1105,4 @@ Vá para a apresentação
 
 Vá para a apresentação  
 [Usando Pacotes do R para o Manuseio de Dados](pacotes.manuseio.dados.R.html)
+
