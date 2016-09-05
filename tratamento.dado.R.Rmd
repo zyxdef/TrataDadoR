@@ -22,10 +22,19 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## O que veremos
 
-1. Princípios de Tratamento e Manuseio de Dados
-2. Instalando e Rodando o Básico do R
+1. Instalando e Rodando o Básico
+2. Princípios de Tratamento e Manuseio de Dados
 3. Rudimentos da Linguagem R
 4. Usando Pacotes do R para o Manuseio dos Dados
+
+
+
+
+
+# Instalando e Rodando o Básico
+
+Vá para a apresentação  
+[Instalando e Rodando o Básico](../InstalaR/instalando.rodando.R.html)
 
 
 
@@ -1077,15 +1086,6 @@ Se você tem pouca experiência:
 - Passe essa atividade para alguém que já saiba fazer isso
 - **OU**
 - Reserve um bocado de tempo para aprender a fazer isso direito.
-
-
-
-
-
-# Instalando e Rodando o Básico do R
-
-Vá para a apresentação  
-[Instalando e Rodando o Básico do R](../InstalaR/instalando.rodando.R.html)
 
 
 
