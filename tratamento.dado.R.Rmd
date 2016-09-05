@@ -414,7 +414,7 @@ individualmente.
 
 Exemplo: idade superior a 100 anos
 
-- não é um erro
+- não é necessariamente um erro
 - mas é raro
 
 
@@ -820,7 +820,7 @@ Processamento dos dados através de programação
 
 ## Programe! Não faça manualmente!
 
-*Por quê programar se posso fazer na unha?*
+*Por que programar se posso fazer na unha?*
 
 1. Rastreabilidade
     - “Esses dados estão certos?” 
