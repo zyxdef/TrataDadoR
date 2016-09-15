@@ -1,11 +1,7 @@
 ---
 title: "Tratamento e Manuseio de Dados com R"
 author: "Marcelo Ventura Freire (EACH/USP)"
-output: 
-  ioslides_presentation: 
-    fig_caption: yes
-    incremental: yes
-    transition: faster
+output: ioslides_presentation
 ---
 
 ```{r setup, include=FALSE, eval=FALSE}
@@ -64,5 +60,15 @@ Vá para a apresentação
 # Usando Pacotes do R para o Manuseio dos Dados
 
 Vá para a apresentação  
-[Usando Pacotes do R para o Manuseio de Dados](pacotes.manuseio.dados.R.html)
+[Usando Pacotes do R para o Manuseio de Dados](../PacRManusDados/pacotes.manuseio.dados.R.html)
+
+
+
+
+
+
+
+# *Workflow* Mínimo para Manuseio de Dados em R
+Vá para a apresentação  
+[*Workflow* Mínimo para Manuseio de Dados em R](../MinWokflowManusDados/workflow.html)
 
