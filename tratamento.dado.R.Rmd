@@ -31,7 +31,7 @@ knitr::opts_chunk$set(echo = FALSE)
 # Instalando e Rodando o Básico
 
 Vá para a apresentação  
-[Instalando e Rodando o Básico](../InstalaR/instalando.rodando.R.html)
+[Instalando e Rodando o Básico](instalando.rodando.R.html)
 
 
 
@@ -41,7 +41,7 @@ Vá para a apresentação
 # Princípios de Tratamento e Manuseio de Dados
 
 Vá para a apresentação  
-[Princípios de Tratamento e Manuseio de Dados](../PrincipTratDados/principios.tratamento.dado.html)
+[Princípios de Tratamento e Manuseio de Dados](principios.tratamento.dado.html)
 
 
 
@@ -50,7 +50,7 @@ Vá para a apresentação
 # Rudimentos da Linguagem R
 
 Vá para a apresentação  
-[Rudimentos da Linguagem R](../IntroLingR/rudimentos.linguagem.R.html)
+[Rudimentos da Linguagem R](rudimentos.linguagem.R.html)
 
 
 
@@ -60,7 +60,7 @@ Vá para a apresentação
 # Usando Pacotes do R para o Manuseio dos Dados
 
 Vá para a apresentação  
-[Usando Pacotes do R para o Manuseio de Dados](../PacRManusDados/pacotes.manuseio.dados.R.html)
+[Usando Pacotes do R para o Manuseio de Dados](pacotes.manuseio.dados.R.html)
 
 
 
@@ -70,5 +70,5 @@ Vá para a apresentação
 
 # *Workflow* Mínimo para Manuseio de Dados em R
 Vá para a apresentação  
-[*Workflow* Mínimo para Manuseio de Dados em R](../MinWokflowManusDados/workflow.html)
+[*Workflow* Mínimo para Manuseio de Dados em R](workflow.html)
 
