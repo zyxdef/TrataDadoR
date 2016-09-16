@@ -20,9 +20,10 @@ knitr::opts_chunk$set(echo = FALSE)
 
 1. Instalando e Rodando o Básico
 2. Princípios de Tratamento e Manuseio de Dados
+5. Um *Workflow* Mínimo para o Tratamento de Dados
 3. Rudimentos da Linguagem R
 4. Usando Pacotes do R para o Manuseio dos Dados
-5. *Workflow* Mínimo para o Tratamento de Dados
+5. Retomando o *Workflow* Mínimo para o Tratamento de Dados
 
 
 
@@ -42,6 +43,16 @@ Vá para a apresentação
 
 Vá para a apresentação  
 [Princípios de Tratamento e Manuseio de Dados](principios.tratamento.dado.html)
+
+
+
+
+
+
+
+# Um *Workflow* Mínimo para Manuseio de Dados em R
+Vá para a apresentação  
+[*Workflow* Mínimo para Manuseio de Dados em R](workflow.html)
 
 
 
@@ -68,7 +79,7 @@ Vá para a apresentação
 
 
 
-# *Workflow* Mínimo para Manuseio de Dados em R
+# Retomando o *Workflow* Mínimo para Manuseio de Dados em R
 Vá para a apresentação  
 [*Workflow* Mínimo para Manuseio de Dados em R](workflow.html)
 
