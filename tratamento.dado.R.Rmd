@@ -1,7 +1,10 @@
 ---
 title: "Tratamento e Manuseio de Dados com R"
 author: "Marcelo Ventura Freire (EACH/USP)"
-output: ioslides_presentation
+output: 
+    ioslides_presentation:
+        self_contained: true
+        smaller: yes
 ---
 
 ```{r setup, include=FALSE, eval=FALSE}
@@ -18,18 +21,18 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## O que veremos
 
-1. Instalando e Rodando o Básico
-2. Princípios de Tratamento e Manuseio de Dados
-5. Um *Workflow* Mínimo para o Tratamento de Dados
-3. Rudimentos da Linguagem R
-4. Usando Pacotes do R para o Manuseio dos Dados
-5. Retomando o *Workflow* Mínimo para o Tratamento de Dados
+1. [Instalando e Rodando o Básico](#instalando)
+1. [Princípios de Tratamento e Manuseio de Dados](#principios)
+1. [Uma Proposta de *Workflow* Mínimo para Manuseio de Dados em R](#workflow)
+1. [Rudimentos da Linguagem R](#rudimentos)
+1. [Usando Pacotes do R para o Manuseio dos Dados](#pacotes)
+1. [Implementando o *Workflow* Proposto](#workflow2)
 
 
 
 
 
-# Instalando e Rodando o Básico
+# Instalando e Rodando o Básico {#instalando}
 
 Vá para a apresentação  
 [Instalando e Rodando o Básico](instalando.rodando.R.html)
@@ -39,7 +42,7 @@ Vá para a apresentação
 
 
 
-# Princípios de Tratamento e Manuseio de Dados
+# Princípios de Tratamento e Manuseio de Dados {#principios}
 
 Vá para a apresentação  
 [Princípios de Tratamento e Manuseio de Dados](principios.tratamento.dado.html)
@@ -50,15 +53,15 @@ Vá para a apresentação
 
 
 
-# Um *Workflow* Mínimo para Manuseio de Dados em R
+# Uma Proposta de *Workflow* Mínimo para Manuseio de Dados em R {#workflow}
 Vá para a apresentação  
-[*Workflow* Mínimo para Manuseio de Dados em R](workflow.html)
+[Uma Proposta de *Workflow* Mínimo para Manuseio de Dados em R](workflow.html)
 
 
 
 
 
-# Rudimentos da Linguagem R
+# Rudimentos da Linguagem R {#rudimentos}
 
 Vá para a apresentação  
 [Rudimentos da Linguagem R](rudimentos.linguagem.R.html)
@@ -68,7 +71,7 @@ Vá para a apresentação
 
 
 
-# Usando Pacotes do R para o Manuseio dos Dados
+# Usando Pacotes do R para o Manuseio dos Dados {#pacotes}
 
 Vá para a apresentação  
 [Usando Pacotes do R para o Manuseio de Dados](pacotes.manuseio.dados.R.html)
@@ -79,7 +82,7 @@ Vá para a apresentação
 
 
 
-# Retomando o *Workflow* Mínimo para Manuseio de Dados em R
+# Implementando o *Workflow* Proposto {#workflow2}
 Vá para a apresentação  
-[*Workflow* Mínimo para Manuseio de Dados em R](workflow.html)
+[Implementando o *Workflow* Proposto](anusDados/workflow.html#importacao)
 
