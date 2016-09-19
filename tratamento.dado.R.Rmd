@@ -4,7 +4,7 @@ author: "Marcelo Ventura Freire (EACH/USP)"
 output: 
     # pdf_document:
     #     toc: true
-    #     toc_depth: 2
+    #     toc_depth: 1
     ioslides_presentation:
         self_contained: true
         smaller: true
