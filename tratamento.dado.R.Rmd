@@ -28,12 +28,12 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## O que veremos
 
-1. [Instalando e Rodando o Básico](#instalando)
-1. [Princípios de Tratamento e Manuseio de Dados](#principios)
-1. [Uma Proposta de *Workflow* Mínimo para Manuseio de Dados em R](#workflow)
-1. [Rudimentos da Linguagem R](#rudimentos)
-1. [Usando Pacotes do R para o Manuseio dos Dados](#pacotes)
-1. [Implementando o *Workflow* Proposto](#workflow2)
+1. [Instalando e Rodando o Básico](#4)
+1. [Princípios de Tratamento e Manuseio de Dados](#5)
+1. [Uma Proposta de *Workflow* Mínimo para Manuseio de Dados em R](#6)
+1. [Rudimentos da Linguagem R](#7)
+1. [Usando Pacotes do R para o Manuseio dos Dados](#8)
+1. [Implementando o *Workflow* Proposto](#9)
 
 
 
@@ -91,5 +91,5 @@ Vá para a apresentação
 
 # Implementando o *Workflow* Proposto {#workflow2}
 Vá para a apresentação  
-[Implementando o *Workflow* Proposto](anusDados/workflow.html#importacao)
+[Implementando o *Workflow* Proposto](workflow.html)
 
