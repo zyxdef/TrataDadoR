@@ -1,0 +1,15 @@
+[submodule "InstalaR"]
+	path = InstalaR
+	url = git@github.com:zyxdef/InstalaR.git
+[submodule "IntroLingR"]
+	path = IntroLingR
+	url = git@github.com:zyxdef/IntroLingR.git
+[submodule "PrincipTratDados"]
+	path = PrincipTratDados
+	url = git@github.com:zyxdef/PrincipTratDados.git
+[submodule "MinWokflowManusDados"]
+	path = MinWokflowManusDados
+	url = git@github.com:zyxdef/MinWokflowManusDados.git
+[submodule "PacRManusDados"]
+	path = PacRManusDados
+	url = git@github.com:zyxdef/PacRManusDados.git

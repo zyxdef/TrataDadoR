@@ -42,57 +42,57 @@ knitr::opts_chunk$set(echo = FALSE)
 
 
 
-# Instalando e Rodando o Básico {#instalando}
+# Instalando e Rodando o Básico
 
 Vá para a apresentação  
-[Instalando e Rodando o Básico](instalando.rodando.R.html)
+[Instalando e Rodando o Básico](InstalaR/instalando.rodando.R.html)
 
 
 
 
 
 
-# Princípios de Tratamento e Manuseio de Dados {#principios}
-
-Vá para a apresentação  
-[Princípios de Tratamento e Manuseio de Dados](principios.tratamento.dado.html)
-
-
-
-
-
-
-
-# Uma Proposta de *Workflow* Mínimo para Manuseio de Dados em R {#workflow}
-Vá para a apresentação  
-[Uma Proposta de *Workflow* Mínimo para Manuseio de Dados em R](workflow.html)
-
-
-
-
-
-# Rudimentos da Linguagem R {#rudimentos}
+# Princípios de Tratamento e Manuseio de Dados
 
 Vá para a apresentação  
-[Rudimentos da Linguagem R](rudimentos.linguagem.R.html)
+[Princípios de Tratamento e Manuseio de Dados](PrincipTratDados/principios.tratamento.dado.html)
 
 
 
 
 
 
-# Usando Pacotes do R para o Manuseio dos Dados {#pacotes}
+
+# Uma Proposta de *Workflow* Mínimo para Manuseio de Dados em R
+Vá para a apresentação  
+[Uma Proposta de *Workflow* Mínimo para Manuseio de Dados em R](MinWokflowManusDados/workflow.html)
+
+
+
+
+
+# Rudimentos da Linguagem R
 
 Vá para a apresentação  
-[Usando Pacotes do R para o Manuseio de Dados](pacotes.manuseio.dados.R.html)
+[Rudimentos da Linguagem R](IntroLingR/rudimentos.linguagem.R.html)
 
 
 
 
 
 
+# Usando Pacotes do R para o Manuseio dos Dados
 
-# Implementando o *Workflow* Proposto {#workflow2}
 Vá para a apresentação  
-[Implementando o *Workflow* Proposto](workflow.html)
+[Usando Pacotes do R para o Manuseio de Dados](PacRManusDados/pacotes.manuseio.dados.R.html)
+
+
+
+
+
+
+
+# Implementando o *Workflow* Proposto
+Vá para a apresentação  
+[Implementando o *Workflow* Proposto](MinWokflowManusDados/workflow.html)
 
