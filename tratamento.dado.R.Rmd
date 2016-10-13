@@ -7,7 +7,7 @@ output:
     #     toc_depth: 1
     ioslides_presentation:
         self_contained: true
-        smaller: true
+        # smaller: true
         smart: true
     # html_document:
     #     toc: true
