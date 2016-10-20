@@ -6,9 +6,10 @@ output:
     #     toc: true
     #     toc_depth: 1
     ioslides_presentation:
+        widescreen : true
         self_contained: true
-        # smaller: true
         smart: true
+        # smaller: true
     # html_document:
     #     toc: true
     #     toc_float: true
@@ -29,14 +30,43 @@ knitr::opts_chunk$set(echo = FALSE)
 
 
 
+## Objetivos
+
+Com este curso, eu pretendo que vocês aprendam...
+
+- elaborar um programa básico em `R` de...
+    - importação/exportação/leitura/gravação de dados
+    - manuseio e crítica de dados
+- elaborar um documento em `RMarkdown` que integre texto e código em `R`
+- conduzir essas atividades através...
+    - do editor integrado `RStudio`
+    - do sistema de controle de versão `Git` 
+- produzir 
+    - análises descritivas básicas
+    - gráficos básicos
+
+
+
+## Objetivos
+
+Ao final deste curso, eu espero que vocês consigam...
+
+- instalar e rodar os programas `R`, `RStudio`, `Git`, `Pandoc`, `LaTeX`
+- realizar no conjunto de dados da sua pesquisa/iniciação/monografia/dissertação/tese
+    - importação, exportação, leitura e gravação 
+    - tratamento, limpeza e formatação do seu conjunto de dados
+    - documentação do seu conjunto de dadosdo seu conjunto de dados
+
+
+
 ## O que veremos
 
-1. [Instalando e Rodando o Básico](#4)
-1. [Princípios de Tratamento e Manuseio de Dados](#5)
-1. [Uma Proposta de *Workflow* Mínimo para Manuseio de Dados em R](#6)
-1. [Rudimentos da Linguagem R](#7)
-1. [Usando Pacotes do R para o Manuseio dos Dados](#8)
-1. [Implementando o *Workflow* Proposto](#9)
+1. [Instalando e Rodando o Básico](#6)
+1. [Princípios de Tratamento e Manuseio de Dados](#7)
+1. [Uma Proposta de *Workflow* Mínimo para Manuseio de Dados em R](#8)
+1. [Rudimentos da Linguagem R](#9)
+1. [Usando Pacotes do R para o Manuseio dos Dados](#10)
+1. [Implementando o *Workflow* Proposto](#11)
 
 
 
