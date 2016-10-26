@@ -2,20 +2,10 @@
 title: "Tratamento e Manuseio de Dados com R"
 author: "Marcelo Ventura Freire (EACH/USP)"
 output: 
-    # pdf_document:
-    #     toc: true
-    #     toc_depth: 1
     ioslides_presentation:
         widescreen : true
         self_contained: true
         smart: true
-        # smaller: true
-    # html_document:
-    #     toc: true
-    #     toc_float: true
-    #     toc_depth: 2
-    #     self_contained: true
-    #     smart: true
 ---
 
 ```{r setup, include=FALSE, eval=FALSE}
