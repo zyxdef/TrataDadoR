@@ -1,5 +1,7 @@
 # Tratamento e Manuseio de Dados com R
 
+Para ver as transparências, clique [aqui](tratamento.dado.R.Rmd)
+
 ## Objetivo
 
 Nestes tempos de *Big Data*, de *Analytics*, de extração automática de dados 
