@@ -1,6 +1,15 @@
 # Tratamento e Manuseio de Dados com R
 
-Para ver as transparências, clique [aqui](tratamento.dado.R.Rmd)
+## *Links* para as transparências
+
+Para ver as transparências do Curso `TrataDadosR`, clique 
+[aqui](https://github.com/zyxdef/TrataDadoR/blob/master/tratamento.dado.R.Rmd).
+
+Para ver as transparências do Projeto `InstalaR`, clique 
+[aqui](https://github.com/zyxdef/InstalaR/blob/master/instalando.rodando.R.Rmd).
+
+
+
 
 ## Objetivo
 
