@@ -2,14 +2,8 @@
 
 ## *Links* para as transparências
 
-Para ver as transparências do Curso `TrataDadosR`, clique 
-[aqui](https://github.com/zyxdef/TrataDadoR/blob/master/tratamento.dado.R.Rmd).
-
-Para ver as transparências do Projeto `InstalaR`, clique 
-[aqui](https://github.com/zyxdef/InstalaR/blob/master/instalando.rodando.R.Rmd).
-
-
-
+Para ver as transparências do Curso, acesse o Projeto `TrataDadoR` no *site*
+<https://github.com/zyxdef/>.
 
 ## Objetivo
 

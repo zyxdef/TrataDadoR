@@ -49,9 +49,18 @@ Ao final deste curso, eu espero que vocês consigam...
 
 
 
+## Para Acompanhar as Aulas
+
+Estas transparências estão no *site* <http://github.com/zyxdef/>.
+
+Entre no Projeto `TrataDadoR` no *site* <https://github.com/zyxdef/> e procure 
+pelo *link* para as transparências.
+
+
+
 ## O que veremos
 
-1. [Instalando e Rodando o Básico](#6)
+1. [Instalando e Rodando o Básico](#instalando-e-rodando-o-basico)
 1. [Princípios de Tratamento e Manuseio de Dados](#7)
 1. [Uma Proposta de *Workflow* Mínimo para Manuseio de Dados em R](#8)
 1. [Rudimentos da Linguagem R](#9)
