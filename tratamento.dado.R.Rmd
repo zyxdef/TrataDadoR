@@ -60,12 +60,12 @@ pelo *link* para as transparências.
 
 ## O que veremos
 
-1. [Instalando e Rodando o Básico](#instalando-e-rodando-o-basico)
-1. [Princípios de Tratamento e Manuseio de Dados](#7)
-1. [Uma Proposta de *Workflow* Mínimo para Manuseio de Dados em R](#8)
-1. [Rudimentos da Linguagem R](#9)
-1. [Usando Pacotes do R para o Manuseio dos Dados](#10)
-1. [Implementando o *Workflow* Proposto](#11)
+1. [Instalando e Rodando o Básico](#7)
+1. [Princípios de Tratamento e Manuseio de Dados](#8)
+1. [Uma Proposta de *Workflow* Mínimo para Manuseio de Dados em R](#9)
+1. [Rudimentos da Linguagem R](#10)
+1. [Usando Pacotes do R para o Manuseio dos Dados](#11)
+1. [Implementando o *Workflow* Proposto](#12)
 
 
 
