@@ -114,10 +114,13 @@ isso; caso uma ou ambas apareçam habilitadas, então você deverá escolher:
 
 Clone este repositório com a seguinte sequência de etapas:
 
-1. Vá para a pasta em que você quer que seja criada a pasta `TrataDadoR` 
-2. Execute o comando
+1. Numa janela de *shell*, vá para a pasta na qual você quer que seja criada a 
+pasta `TrataDadoR` 
+2. Execute os comandos 
 
                 git clone --recursive git@github.com:zyxdef/TrataDadoR.git
+                cd TrataDadoR
+                git submodule update  --remote --init --recursive
 
 3. *Voilà!* Este projeto aqui será clonado na sua máquina.
 
