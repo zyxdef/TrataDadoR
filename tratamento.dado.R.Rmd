@@ -74,7 +74,11 @@ pelo *link* para as transparências.
 # Instalando e Rodando o Básico
 
 Vá para a apresentação  
-[Instalando e Rodando o Básico](InstalaR/instalando.rodando.R.html)
+`Instalando e Rodando o Básico`  
+em:
+
+- [HTML](InstalaR/instalando.rodando.R.html)
+- [RMarkdown](InstalaR/instalando.rodando.R.Rmd)
 
 
 
@@ -84,7 +88,11 @@ Vá para a apresentação
 # Princípios de Tratamento e Manuseio de Dados
 
 Vá para a apresentação  
-[Princípios de Tratamento e Manuseio de Dados](PrincipTratDados/principios.tratamento.dado.html)
+`Princípios de Tratamento e Manuseio de Dados`  
+em:
+
+- [HTML](PrincipTratDados/principios.tratamento.dado.html)
+- [RMarkdown](PrincipTratDados/principios.tratamento.dado.Rmd)
 
 
 
@@ -94,7 +102,11 @@ Vá para a apresentação
 
 # Uma Proposta de *Workflow* Mínimo para Manuseio de Dados em R
 Vá para a apresentação  
-[Uma Proposta de *Workflow* Mínimo para Manuseio de Dados em R](MinWokflowManusDados/workflow.html)
+`Uma Proposta de *Workflow* Mínimo para Manuseio de Dados em R`  
+em:
+
+- [HTLM](MinWokflowManusDados/workflow.html)
+- [RMarkdown](MinWokflowManusDados/workflow.Rmd)
 
 
 
@@ -103,7 +115,11 @@ Vá para a apresentação
 # Rudimentos da Linguagem R
 
 Vá para a apresentação  
-[Rudimentos da Linguagem R](IntroLingR/rudimentos.linguagem.R.html)
+`Rudimentos da Linguagem R`  
+em:
+
+- [HTLM](IntroLingR/rudimentos.linguagem.R.html)
+- [RMarkdown](IntroLingR/rudimentos.linguagem.R.Rmd)
 
 
 
@@ -113,7 +129,11 @@ Vá para a apresentação
 # Usando Pacotes do R para o Manuseio dos Dados
 
 Vá para a apresentação  
-[Usando Pacotes do R para o Manuseio de Dados](PacRManusDados/pacotes.manuseio.dados.R.html)
+`Usando Pacotes do R para o Manuseio de Dados`  
+em:
+
+- [HTML](PacRManusDados/pacotes.manuseio.dados.R.html)
+- [RMarkdown](PacRManusDados/pacotes.manuseio.dados.R.Rmd)
 
 
 
@@ -123,5 +143,9 @@ Vá para a apresentação
 
 # Implementando o *Workflow* Proposto
 Vá para a apresentação  
-[Implementando o *Workflow* Proposto](MinWokflowManusDados/workflow.html)
+`Implementando o *Workflow* Proposto`  
+em:
+
+- [HTML](MinWokflowManusDados/workflow.html)
+- [RMarkdown](MinWokflowManusDados/workflow.Rmd)
 
